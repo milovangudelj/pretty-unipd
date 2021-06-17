@@ -3,3 +3,17 @@
 body {
 	font-family: "Inter", sans-serif;
 }
+
+#page {
+	padding-left: 45px;
+}
+
+body,
+#page-footer {
+	background: #383838;
+}
+
+#page-footer,
+.copy {
+	color: #eee;
+}
