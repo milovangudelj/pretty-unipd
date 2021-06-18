@@ -15,7 +15,7 @@
 	const path = "https://upo.milovangudelj.com/";
 	const styles = {
 		base: path + "styles.css",
-		sitePolicyAgreement: path + "sitePolicyAgreement",
+		sitePolicyAgreement: path + "sitePolicyAgreement.css",
 	};
 	const location = window.location.href;
 
