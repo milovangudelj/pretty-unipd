@@ -122,6 +122,8 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	color: #eee;
 	transform: scale(1.1);
+	border: none;
+	background-color: #89000c !important;
 }
 
 .singlebutton:nth-child(1) > div > input[type="submit"] {
