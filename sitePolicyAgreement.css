@@ -112,17 +112,17 @@ form {
 }
 
 input[type="submit"] {
-	padding: 8px 16px;
-	margin: 0;
-	border: none;
-	border-radius: 4px;
-	transition: 200ms ease all;
+	padding: 8px 16px !important;
+	margin: 0 !important;
+	border: none !important;
+	border-radius: 4px !important;
+	transition: 200ms ease all !important;
 }
 
 input[type="submit"]:hover {
-	color: #eee;
-	transform: scale(1.1);
-	border: none;
+	color: #eee !important;
+	transform: scale(1.1) !important;
+	border: none !important;
 	background-color: #89000c !important;
 }
 
