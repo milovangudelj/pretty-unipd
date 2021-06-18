@@ -145,8 +145,10 @@ div#top_footer:last-of-type {
 	overflow: hidden;
 }
 
-.nav > li > a,
-.nav > li > a:hover,
-.nav > li > a:focus {
+.navbar .nav > li > a,
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
 	border: none;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
 }
