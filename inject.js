@@ -16,6 +16,7 @@
 	const styles = {
 		base: path + "styles.css",
 		sitePolicyAgreement: path + "sitePolicyAgreement.css",
+		unipdPolicy: path + "unipdPolicy.css",
 	};
 	const location = window.location.href;
 
@@ -26,7 +27,9 @@
 		case "https://elearning.dei.unipd.it/user/policy.php":
 			link.setAttribute("href", styles.sitePolicyAgreement);
 			break;
-
+		case "https://elearning.dei.unipd.it/UnipdPolicy.html":
+			link.setAttribute("href", styles.unipdPolicy);
+			break;
 		default:
 			link.setAttribute("href", styles.base);
 			break;
