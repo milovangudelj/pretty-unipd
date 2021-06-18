@@ -144,3 +144,9 @@ div#top_footer:last-of-type {
 	height: 1px;
 	overflow: hidden;
 }
+
+.nav > li > a,
+.nav > li > a:hover,
+.nav > li > a:focus {
+	border: none;
+}
