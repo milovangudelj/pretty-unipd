@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  It changes the styling of every page on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -12,8 +12,25 @@
 (function () {
 	"use strict";
 
+	const path = "https://upo.milovangudelj.com/";
+	const styles = {
+		base: path + "styles.css",
+		sitePolicyAgreement: path + "sitePolicyAgreement",
+	};
+	const location = window.location.href;
+
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
-	link.setAttribute("href", "https://upo.milovangudelj.com/styles.css");
+
+	switch (location) {
+		case "https://elearning.dei.unipd.it/user/policy.php":
+			link.setAttribute("href", styles.sitePolicyAgreement);
+			break;
+
+		default:
+			link.setAttribute("href", styles.base);
+			break;
+	}
+
 	document.head.appendChild(link);
 })();

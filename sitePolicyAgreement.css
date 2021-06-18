@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+body {
+	font-family: "Inter", sans-serif;
+}
+
+#page {
+	padding-left: 45px;
+}
+
+body,
+#page-footer {
+	background: #383838;
+	color: #eee;
+	overflow-x: hidden;
+}
+
+#page-footer,
+.copy {
+	color: #eee;
+}
+
+.container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex-direction: row;
+	align-items: center;
+	height: 0;
+	overflow: hidden;
+	background: #383838;
+}
+
+div#yui3-css-stamp {
+	position: absolute !important;
+	visibility: hidden !important;
+}
+
+div#page {
+	padding: 0;
+}
+
+div#top-header {
+	background: #555;
+}
+
+a.logo.pull-left {
+	overflow: hidden;
+	height: 120px;
+	display: flex;
+	align-content: center;
+}
+
+img {
+	height: 120px;
+	width: auto;
+}
+
+.page-hdng {
+	flex-grow: 1;
+	display: block;
+	height: 100%;
+	margin-left: 12px;
+	padding-left: 12px;
+}
+
+a.brand {
+	display: contents;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+}
+
+section#region-main {
+	background: #555;
+	overflow: auto;
+	border-radius: 4px;
+}
+
+h2 {
+	color: #eee;
+}
+
+iframe#resourceobject {
+	width: 1235px;
+	border: none;
+	height: 517px;
+}
+
+div#notice {
+	margin: 24px auto;
+	border: none;
+	color: #eee;
+}
+
+div#modal-content {
+	background: #777;
+	border: none;
+	border-radius: 4px;
+}
+
+div#modal-footer {
+	background: #777;
+	border: none;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+}
+
+form {
+	padding: 8px;
+}
+
+input[type="submit"] {
+	padding: 8px 16px;
+	margin: 0;
+	background-color: #89000c;
+	border: none;
+	border-radius: 4px;
+	transition: 200ms ease all;
+}
+
+input[value="No"] {
+	padding: 8px 16px;
+	margin: 0;
+	background: #444;
+	border: none;
+	border-radius: 4px;
+	transition: 200ms ease all;
+}
