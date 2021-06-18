@@ -4,10 +4,6 @@ body {
 	font-family: "Inter", sans-serif;
 }
 
-#page {
-	padding-left: 45px;
-}
-
 body,
 #page-footer {
 	background: #383838;
@@ -21,14 +17,7 @@ body,
 }
 
 .container-fluid {
-	display: flex;
-	justify-content: space-between;
-	align-content: center;
-	flex-direction: row;
-	align-items: center;
-	height: 0;
 	overflow: hidden;
-	background: #383838;
 }
 
 div#yui3-css-stamp {
