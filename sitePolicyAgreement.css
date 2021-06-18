@@ -135,3 +135,12 @@ input[value="No"]:hover {
 input[value="No"] {
 	background-color: #444 !important;
 }
+
+div#top_footer:last-of-type {
+	margin: 24px 0;
+	padding: 0;
+	border: none;
+	background-color: #89000c;
+	height: 1px;
+	overflow: hidden;
+}
