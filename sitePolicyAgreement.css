@@ -115,8 +115,8 @@ form {
 	display: block;
 }
 
-input[value="yes"],
-input[value="no"] {
+input[value="Yes"],
+input[value="No"] {
 	padding: 8px 16px !important;
 	margin: 0 !important;
 	border: none !important;
@@ -125,13 +125,13 @@ input[value="no"] {
 	background-color: #89000c !important;
 }
 
-input[value="yes"]:hover,
-input[value="no"]:hover {
+input[value="Yes"]:hover,
+input[value="No"]:hover {
 	color: #eee !important;
 	transform: scale(1.1) !important;
 	border: none !important;
 }
 
-input[value="no"] {
-	background-color: blue !important;
+input[value="No"] {
+	background-color: #444 !important;
 }
