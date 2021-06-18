@@ -11,6 +11,7 @@ body {
 body,
 #page-footer {
 	background: #383838;
+	color: inherit;
 }
 
 #page-footer,

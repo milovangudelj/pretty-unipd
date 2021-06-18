@@ -78,10 +78,9 @@ h2 {
 }
 
 iframe#resourceobject {
-	width: 1235px;
+	width: 100% !important;
 	border: none;
-	height: 517px;
-	color: #eee;
+	color: #eee !important;
 }
 
 div#notice {
@@ -111,25 +110,26 @@ form {
 	padding: 8px;
 }
 
+.singlebutton div {
+	margin: 0;
+	display: block;
+}
+
 input[type="submit"] {
 	padding: 8px 16px !important;
 	margin: 0 !important;
 	border: none !important;
 	border-radius: 4px !important;
 	transition: 200ms ease all !important;
+	background-color: #89000c !important;
 }
 
 input[type="submit"]:hover {
 	color: #eee !important;
 	transform: scale(1.1) !important;
 	border: none !important;
-	background-color: #89000c !important;
 }
 
-.singlebutton:nth-child(1) > div > input[type="submit"] {
-	background-color: #89000c;
-}
-
-.singlebutton:nth-child(2) > div > input[type="submit"] {
+input[value="no"] {
 	background-color: #444;
 }
