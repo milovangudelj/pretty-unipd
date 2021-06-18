@@ -20,6 +20,14 @@ body,
 	overflow: hidden;
 }
 
+#top-header > .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex-direction: row;
+	align-items: center;
+}
+
 div#yui3-css-stamp {
 	position: absolute !important;
 	visibility: hidden !important;
@@ -73,6 +81,7 @@ iframe#resourceobject {
 	width: 1235px;
 	border: none;
 	height: 517px;
+	color: #eee;
 }
 
 div#notice {
@@ -105,17 +114,20 @@ form {
 input[type="submit"] {
 	padding: 8px 16px;
 	margin: 0;
-	background-color: #89000c;
 	border: none;
 	border-radius: 4px;
 	transition: 200ms ease all;
 }
 
-input[value="No"] {
-	padding: 8px 16px;
-	margin: 0;
-	background: #444;
-	border: none;
-	border-radius: 4px;
-	transition: 200ms ease all;
+input[type="submit"]:hover {
+	color: #eee;
+	transform: scale(1.1);
+}
+
+.singlebutton:nth-child(1) > div > input[type="submit"] {
+	background-color: #89000c;
+}
+
+.singlebutton:nth-child(2) > div > input[type="submit"] {
+	background-color: #444;
 }
