@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.1.4
+// @version      0.1.5
 // @description  It changes the styling of every page on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -12,32 +12,45 @@
 (function () {
 	"use strict";
 
-	const path = "https://upo.milovangudelj.com/";
-	const styles = {
-		base: path + "styles.css",
-		sitePolicyAgreement: path + "sitePolicyAgreement.css",
-		unipdPolicy: path + "unipdPolicy.css",
-		coursePage: path + "coursePage.css",
-	};
+	const filesLocation = "https://upo.milovangudelj.com/";
+	const stylesheets = [
+		{
+			page: "elearning.dei.unipd.it/user/policy.php",
+			css: filesLocation + "sitePolicyAgreement.css",
+		},
+		{
+			page: "elearning.dei.unipd.it/UnipdPolicy.html",
+			css: filesLocation + "unipdPolicy.css",
+		},
+		{
+			page: "elearning.dei.unipd.it/course",
+			css: filesLocation + "coursePage.css",
+		},
+	];
+
 	const location = window.location.href;
 
-	var link = document.createElement("link");
-	link.setAttribute("rel", "stylesheet");
+	const baseStyles = document.createElement("link");
+	const myStyles = document.createElement("link");
 
-	switch (location) {
-		case "https://elearning.dei.unipd.it/user/policy.php":
-			link.setAttribute("href", styles.sitePolicyAgreement);
-			break;
-		case "https://elearning.dei.unipd.it/UnipdPolicy.html":
-			link.setAttribute("href", styles.unipdPolicy);
-			break;
-		case location.includes(`https://elearning.dei.unipd.it/course`):
-			link.setAttribute("href", styles.coursePage);
-			break;
-		default:
-			link.setAttribute("href", styles.base);
-			break;
+	baseStyles.setAttribute("rel", "stylesheet");
+	myStyles.setAttribute("rel", "stylesheet");
+
+	let page = checkPath(location, stylesheets);
+
+	baseStyles.setAttribute("href", filesLocation + "styles.css");
+	myStyles.setAttribute("href", stylesheets[page].css);
+
+	document.head.appendChild(baseStyles);
+	document.head.appendChild(myStyles);
+
+	function checkPath(l, s) {
+		let page = -1;
+
+		s.forEach((p, i) => {
+			if (page === -1 && l.includes(p.page)) page = i;
+		});
+
+		return page;
 	}
-
-	document.head.appendChild(link);
 })();

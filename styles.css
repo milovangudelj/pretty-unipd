@@ -21,3 +21,41 @@ body.has_dock {
 div#page {
 	padding: 0 !important;
 }
+
+div#top-header {
+	background: #555;
+}
+
+a.logo.pull-left {
+	overflow: hidden;
+	height: 120px;
+	display: flex;
+	align-content: center;
+}
+
+img {
+	height: 120px;
+	width: auto;
+}
+
+.page-hdng {
+	flex-grow: 1;
+	display: block;
+	height: 100%;
+	margin-left: 12px;
+	padding-left: 12px;
+}
+
+a.brand {
+	display: contents;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+}
+
+.navbar .nav > li > a,
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
+	border: none;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+}
