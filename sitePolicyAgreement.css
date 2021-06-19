@@ -16,10 +16,6 @@ body,
 	color: #eee;
 }
 
-.container-fluid {
-	overflow: hidden;
-}
-
 #top-header > .container-fluid {
 	display: flex;
 	justify-content: space-between;
@@ -31,12 +27,6 @@ body,
 div#yui3-css-stamp {
 	position: absolute !important;
 	visibility: hidden !important;
-}
-
-section#region-main {
-	background: #555;
-	overflow: auto;
-	border-radius: 4px;
 }
 
 h2 {

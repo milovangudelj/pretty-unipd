@@ -22,6 +22,16 @@ div#page {
 	padding: 0 !important;
 }
 
+.container-fluid {
+	overflow-x: hidden;
+}
+
+section#region-main {
+	background: #555;
+	overflow: auto;
+	border-radius: 4px;
+}
+
 div#top-header {
 	background: #555;
 }
