@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.1.5
+// @version      0.1.6
 // @description  It changes the styling of every page on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -28,23 +28,25 @@
 		},
 	];
 
+	// Check which page the user is currently on
 	const location = window.location.href;
-
-	const baseStyles = document.createElement("link");
-	const myStyles = document.createElement("link");
-
-	baseStyles.setAttribute("rel", "stylesheet");
-	myStyles.setAttribute("rel", "stylesheet");
-
 	let page = checkPath(location, stylesheets);
+	console.log(`Currently on page ${page}:`, stylesheets[page]);
 
+	// Append base stylesheet
+	const baseStyles = document.createElement("link");
+	baseStyles.setAttribute("rel", "stylesheet");
 	baseStyles.setAttribute("href", filesLocation + "styles.css");
-	myStyles.setAttribute("href", stylesheets[page].css);
-
 	document.head.appendChild(baseStyles);
+
+	// Append specific stylesheet
+	const myStyles = document.createElement("link");
+	myStyles.setAttribute("rel", "stylesheet");
+	myStyles.setAttribute("href", stylesheets[page].css);
 	document.head.appendChild(myStyles);
 
 	function checkPath(l, s) {
+		// Checks if current location matches with one of the pages provided in the second parameter
 		let page = -1;
 
 		s.forEach((p, i) => {
