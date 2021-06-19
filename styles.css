@@ -4,10 +4,6 @@ body {
 	font-family: "Inter", sans-serif;
 }
 
-#page {
-	padding-left: 45px;
-}
-
 body,
 #page-footer {
 	background: #383838;
@@ -16,4 +12,12 @@ body,
 #page-footer,
 .copy {
 	color: #eee;
+}
+
+body.has_dock {
+	padding-left: 45px !important;
+}
+
+div#page {
+	padding: 0 !important;
 }

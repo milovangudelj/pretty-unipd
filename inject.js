@@ -31,9 +31,7 @@
 		case "https://elearning.dei.unipd.it/UnipdPolicy.html":
 			link.setAttribute("href", styles.unipdPolicy);
 			break;
-		case location.includes(
-			`https://elearning.dei.unipd.it/${"enrol" || "course"}`
-		):
+		case location.includes(`https://elearning.dei.unipd.it/course`):
 			link.setAttribute("href", styles.coursePage);
 			break;
 		default:
