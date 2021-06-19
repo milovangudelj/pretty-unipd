@@ -14,8 +14,8 @@ onsubmit="return login_via_js()"
 	>
 	<input
 		class="my-form-control"
-		id="j_username"
-		name="j_username"
+		id="j_username_js"
+		name="j_username_js"
 		type="text"
 		value=""
 		tabindex="1"
@@ -24,12 +24,12 @@ onsubmit="return login_via_js()"
 	/>
 </div>
 <div class="my-form-group">
-	<label class="my-form-label" for="j_password"
+	<label class="my-form-label" for="password"
 		>Password <span class="required-field">*</span></label
 	>
 	<input
 		class="my-form-control"
-		id="j_password"
+		id="password"
 		name="j_password"
 		type="password"
 		value=""
