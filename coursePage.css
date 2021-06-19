@@ -1,0 +1,7 @@
+body.has_dock {
+	padding-left: 45px !important;
+}
+
+div#page {
+	padding: 0 !important;
+}

@@ -17,6 +17,7 @@
 		base: path + "styles.css",
 		sitePolicyAgreement: path + "sitePolicyAgreement.css",
 		unipdPolicy: path + "unipdPolicy.css",
+		coursePage: path + "coursePage.css",
 	};
 	const location = window.location.href;
 
@@ -29,6 +30,11 @@
 			break;
 		case "https://elearning.dei.unipd.it/UnipdPolicy.html":
 			link.setAttribute("href", styles.unipdPolicy);
+			break;
+		case location.includes(
+			`https://elearning.dei.unipd.it/${"enrol" || "course"}`
+		):
+			link.setAttribute("href", styles.coursePage);
 			break;
 		default:
 			link.setAttribute("href", styles.base);
