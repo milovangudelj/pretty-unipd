@@ -1,17 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
+:root {
+	--primary-color: #89000c;
+	--he-txt-od: #eee;
+	--dp00: #383838;
+	--dp01: #444;
+	--dp02: #555;
+	--dp03: #777;
+}
+
 body {
 	font-family: "Inter", sans-serif;
 }
 
 body,
 #page-footer {
-	background: #383838;
+	background: var(--dp00);
 }
 
 #page-footer,
 .copy {
-	color: #eee;
+	color: var(--he-txt-od);
 }
 
 body.has_dock {
@@ -27,13 +36,13 @@ div#page {
 }
 
 section#region-main {
-	background: #555;
+	background: var(--dp02);
 	overflow: auto;
 	border-radius: 4px;
 }
 
 div#top-header {
-	background: #555;
+	background: var(--dp02);
 }
 
 div#top-header > .container-fluid {
