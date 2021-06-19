@@ -19,6 +19,8 @@ a.brand,
 body,
 #page-footer {
 	background: var(--dp00);
+	color: var(--he-txt-od);
+	overflow-x: hidden;
 }
 
 #page-footer,
@@ -92,7 +94,43 @@ a.brand {
 	font-size: 16px;
 }
 
-.loginpanel > div > center > a {
+.loginpanel {
+	background: #666 !important;
+	padding: 24px !important;
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2) !important;
+	border: none !important;
+}
+
+form#guestlogin {
+	display: flex;
+	justify-content: center;
+	margin: 24px 0;
+}
+
+input[value="Yes"],
+input[value="No"],
+.guestform > input[type="submit"] {
+	padding: 8px 16px !important;
+	margin: 0 !important;
+	border: none !important;
+	border-radius: 4px !important;
+	transition: 200ms ease all !important;
+	background-color: var(--primary-color) !important;
+}
+
+input[value="Yes"]:hover,
+input[value="No"]:hover,
+.guestform > input[type="submit"]:hover {
+	color: var(--he-txt-od) !important;
+	transform: scale(1.1) !important;
+	border: none !important;
+}
+
+input[value="No"] {
+	background-color: var(--dp01) !important;
+}
+
+.guestform > input[type="submit"] {
 	display: block;
-	width: 141px !important;
+	width: min-content;
 }

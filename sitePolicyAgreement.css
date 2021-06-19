@@ -1,9 +1,3 @@
-body,
-#page-footer {
-	color: var(--he-txt-od);
-	overflow-x: hidden;
-}
-
 div#yui3-css-stamp {
 	position: absolute !important;
 	visibility: hidden !important;
@@ -49,27 +43,6 @@ form {
 .singlebutton div {
 	margin: 0;
 	display: block;
-}
-
-input[value="Yes"],
-input[value="No"] {
-	padding: 8px 16px !important;
-	margin: 0 !important;
-	border: none !important;
-	border-radius: 4px !important;
-	transition: 200ms ease all !important;
-	background-color: var(--primary-color) !important;
-}
-
-input[value="Yes"]:hover,
-input[value="No"]:hover {
-	color: var(--he-txt-od) !important;
-	transform: scale(1.1) !important;
-	border: none !important;
-}
-
-input[value="No"] {
-	background-color: var(--dp01) !important;
 }
 
 div#top_footer:last-of-type {
