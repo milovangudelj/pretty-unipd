@@ -51,4 +51,5 @@ newForm.innerHTML = `
 	Accedi
 </button>`;
 
-oldForm.parentElement.replaceChild(newForm, oldForm);
+// oldForm.parentElement.replaceChild(newForm, oldForm);
+oldForm.parentElement.appendChild(newForm);

@@ -38,7 +38,6 @@
 	// Check which page the user is currently on
 	const location = window.location.href;
 	let page = checkPath(location, stylesheets);
-	console.log(`Currently on page ${page}:`, stylesheets[page]);
 
 	// Append base stylesheet
 	const baseStyles = document.createElement("link");
