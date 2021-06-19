@@ -1,27 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
-
-body {
-	font-family: "Inter", sans-serif;
+:root {
+	--primary-color: #89000c;
+	--he-txt-od: #eee;
+	--dp00: #383838;
+	--dp01: #444;
+	--dp02: #777;
 }
 
 body,
 #page-footer {
-	background: #383838;
-	color: #eee;
+	color: var(--he-txt-od);
 	overflow-x: hidden;
-}
-
-#page-footer,
-.copy {
-	color: #eee;
-}
-
-#top-header > .container-fluid {
-	display: flex;
-	justify-content: space-between;
-	align-content: center;
-	flex-direction: row;
-	align-items: center;
 }
 
 div#yui3-css-stamp {
@@ -30,7 +18,7 @@ div#yui3-css-stamp {
 }
 
 h2 {
-	color: #eee;
+	color: var(--he-txt-od);
 }
 
 iframe#resourceobject {
@@ -42,17 +30,17 @@ iframe#resourceobject {
 div#notice {
 	margin: 24px auto;
 	border: none;
-	color: #eee;
+	color: var(--he-txt-od);
 }
 
 div#modal-content {
-	background: #777;
+	background: var(--dp02);
 	border: none;
 	border-radius: 4px;
 }
 
 div#modal-footer {
-	background: #777;
+	background: var(--dp02);
 	border: none;
 }
 
@@ -78,25 +66,25 @@ input[value="No"] {
 	border: none !important;
 	border-radius: 4px !important;
 	transition: 200ms ease all !important;
-	background-color: #89000c !important;
+	background-color: var(--primary-color) !important;
 }
 
 input[value="Yes"]:hover,
 input[value="No"]:hover {
-	color: #eee !important;
+	color: var(--he-txt-od) !important;
 	transform: scale(1.1) !important;
 	border: none !important;
 }
 
 input[value="No"] {
-	background-color: #444 !important;
+	background-color: var(--dp01) !important;
 }
 
 div#top_footer:last-of-type {
 	margin: 24px 0;
 	padding: 0;
 	border: none;
-	background-color: #89000c;
+	background-color: var(--primary-color);
 	height: 1px;
 	overflow: hidden;
 }

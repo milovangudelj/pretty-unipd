@@ -36,6 +36,14 @@ div#top-header {
 	background: #555;
 }
 
+div#top-header > .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex-direction: row;
+	align-items: center;
+}
+
 a.logo.pull-left {
 	overflow: hidden;
 	height: 120px;
