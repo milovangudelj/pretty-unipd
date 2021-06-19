@@ -67,4 +67,5 @@ form {
 .my-submit-btn:hover,
 .my-submit-btn:focus {
 	background-color: #a0000d;
+	color: #fff;
 }

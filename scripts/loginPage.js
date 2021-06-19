@@ -1,13 +1,15 @@
 const oldForm = document.querySelector(".form-horizontal");
 
 const newForm = document.createElement("form");
-newForm.innerHTML = `<form
-class="my-login-form"
-id="user-login-form"
-action="/idp/profile/SAML2/Redirect/SSO?execution=e1s2"
-method="post"
-onsubmit="return login_via_js()"
->
+newForm.setAttribute("class", "my-login-form");
+newForm.setAttribute("id", "user-login-form");
+newForm.setAttribute(
+	"action",
+	window.location.href.slice(window.location.href.indexOf("/idp"))
+);
+newForm.setAttribute("method", "post");
+newForm.setAttribute("onsubmit", "return login_via_js()");
+newForm.innerHTML = `
 <div class="my-form-group">
 	<label class="my-form-label" for="js_username"
 		>Email <span class="required-field">*</span></label
@@ -47,7 +49,6 @@ onsubmit="return login_via_js()"
 	tabindex="3"
 >
 	Accedi
-</button>
-</form>`;
+</button>`;
 
 oldForm.parentElement.replaceChild(newForm, oldForm);
