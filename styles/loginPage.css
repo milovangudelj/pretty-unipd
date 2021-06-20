@@ -18,7 +18,39 @@ a.lang-anchor abbr {
 	color: #eee;
 }
 
+.row {
+	margin: 0;
+}
+
+div.row:nth-child(2) > div.col-xs-12 {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0;
+	padding: 0;
+}
+
+.col-xs-offset-6.col-xs-5 {
+	display: flex;
+	margin: 12px 0 !important;
+	padding: 0;
+}
+
+span.lang-flag {
+	margin: 0 6px;
+	padding-left: 24px;
+}
+
+span.lang-flag:last-of-type {
+	margin: 0 6px 0 0;
+}
+
+div.row > div > div.row {
+	margin: 0;
+}
+
 .col-xs-12.col-md-offset-2.col-md-5 {
+	display: flex;
+	flex-direction: column;
 	margin: 24px 0;
 }
 
