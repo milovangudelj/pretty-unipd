@@ -69,7 +69,7 @@ a.logo.pull-left {
 	align-content: center;
 }
 
-img {
+img[src*="800_black"] {
 	height: 120px;
 	width: auto;
 }
