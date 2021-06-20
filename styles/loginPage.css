@@ -1,6 +1,21 @@
 body.enhanced {
 	display: flex;
 	justify-content: center;
+	color: #eee !important;
+}
+
+img.img-responsive.pull-left,
+img.img-responsive.pull-right {
+	height: 100px;
+}
+
+h1 {
+	margin: 0 !important;
+}
+
+h1,
+a.lang-anchor abbr {
+	color: #eee;
 }
 
 .col-xs-12.col-md-offset-2.col-md-5 {
