@@ -9,6 +9,7 @@ const submitButton = document.querySelector("div.col-xs-12 > #login_button_js");
 uglyAssForm.insertBefore(submitButton, uglyAssForm.children[3]); // Move it outside
 uglyAssForm.removeChild(uglyAssForm.children[4]); // Remove old button wrapper
 submitButton.className = "my-submit-btn"; // Add my class name
+submitButton.removeAttribute("style"); // Removing default hidden styles
 
 // Pull out form groups from their wrappers and hide them when done
 let formField = document.querySelector(
