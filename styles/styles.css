@@ -24,8 +24,10 @@ body,
 }
 
 #page-footer,
-.copy {
-	color: var(--he-txt-od);
+.copy,
+span.instancename,
+h3.sectionname {
+	color: var(--he-txt-od) !important;
 }
 
 body.has_dock {
