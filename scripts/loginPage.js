@@ -29,7 +29,7 @@ formGroup.removeChild(formGroup.children[2]);
 formGroup.className = "my-form-group";
 formInput.className = "my-form-control";
 formInput.setAttribute("placeholder", "nome.cognome@unipd.it");
-formInput.setAttribute("required");
+formInput.setAttribute("required", "");
 formGroup.children[0].className = "my-form-label";
 formGroup.children[0].innerHTML = 'Email <span class="required-field">*</span>';
 
@@ -40,7 +40,7 @@ formGroup.insertBefore(formInput, formGroup.children[1]);
 formGroup.removeChild(formGroup.children[2]);
 formGroup.className = "my-form-group";
 formInput.className = "my-form-control";
-formInput.setAttribute("required");
+formInput.setAttribute("required", "");
 formGroup.children[0].className = "my-form-label";
 formGroup.children[0].innerHTML =
 	'Password <span class="required-field">*</span>';
