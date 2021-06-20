@@ -8,7 +8,7 @@ newForm.setAttribute(
 	window.location.href.slice(window.location.href.indexOf("/idp"))
 );
 newForm.setAttribute("method", "post");
-newForm.setAttribute("onsubmit", "return login_via_js()");
+newForm.setAttribute("onsubmit", "return my_login_via_js()");
 newForm.innerHTML = `
 <div class="my-form-group">
 	<label class="my-form-label" for="js_username"
@@ -45,7 +45,7 @@ newForm.innerHTML = `
 	type="submit"
 	name="_eventId_proceed"
 	id="login_button_js"
-	onclick="javascript:login_via_js()"
+	onclick="javascript:my_login_via_js()"
 	tabindex="3"
 >
 	Accedi
@@ -53,3 +53,35 @@ newForm.innerHTML = `
 
 // oldForm.parentElement.replaceChild(newForm, oldForm);
 oldForm.parentElement.appendChild(newForm);
+
+const myLoginScript = document.createElement("script");
+myLoginScript.setAttribute("type", "text/javascript");
+myLoginScript.innerText = `
+function my_login_via_js(){
+
+	var userjs = document.getElementById('j_username_js');
+	var user = document.getElementById('j_username');
+	var jpassword = document.getElementById('j_password');
+	var formlogin = document.getElementById('user-login-form');
+
+	var StrBlank = userjs.value.substring(0, 1);
+	while (StrBlank == " ")
+	{
+	 userjs.value = userjs.value.substring(1, userjs.value.length);
+	 StrBlank = userjs.value.substring(0, 1);
+	}
+	
+	StrBlank = userjs.value.substring(userjs.value.length - 1, userjs.value.length);
+															
+	while (StrBlank == " ")
+	{
+	 userjs.value = userjs.value.substring(0, userjs.value.length-1);
+	 StrBlank = userjs.value.substring(userjs.value.length-1, userjs.value.length);
+	}
+
+	user.value= userjs.value;
+
+	return true;
+};
+`;
+document.body.appendChild(myLoginScript);
