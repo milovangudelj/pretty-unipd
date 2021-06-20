@@ -1,20 +1,24 @@
+// Get form reference
+
+const uglyAssForm = document.querySelector(".form-horizontal");
+
 // Login form manipulation
 
-oldForm.children[1].style.display = "none"; // Hide radio buttons
+uglyAssForm.children[1].style.display = "none"; // Hide radio buttons
 const submitButton = document.querySelector("div.col-xs-12 > #login_button_js"); // Get submit button
-oldForm.insertBefore(submitButton, oldForm.children[3]); // Move it outside
-oldForm.removeChild(oldForm.children[4]); // Remove old button wrapper
+uglyAssForm.insertBefore(submitButton, uglyAssForm.children[3]); // Move it outside
+uglyAssForm.removeChild(uglyAssForm.children[4]); // Remove old button wrapper
 submitButton.className = "my-submit-btn"; // Add my class name
 
 // Pull out form groups from their wrappers and hide them when done
 let formField = document.querySelector(
 	"span#div_hidden_before_js > div.form-group"
 );
-oldForm.insertBefore(formField, oldForm.children[0]);
+uglyAssForm.insertBefore(formField, uglyAssForm.children[0]);
 formField = document.querySelector("div#passwordbox > div.form-group");
-oldForm.insertBefore(formField, oldForm.children[1]);
-oldForm.children[2].style.display = "none";
-oldForm.children[4].style.display = "none";
+uglyAssForm.insertBefore(formField, uglyAssForm.children[1]);
+uglyAssForm.children[2].style.display = "none";
+uglyAssForm.children[4].style.display = "none";
 
 // Pull out form input from unnecessary wrapper and add my class names
 let formInput = document.querySelector("div > input#j_username_js");
