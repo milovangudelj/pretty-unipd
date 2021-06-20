@@ -1,18 +1,17 @@
-body {
-	background-color: #383838;
-}
-
-.center-form {
-	height: 100vh;
+body.enhanced {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
-form {
-	background-color: #555;
-	padding: 32px;
-	color: #eee;
+.col-xs-12.col-md-offset-2.col-md-5 {
+	margin: 24px 0;
+}
+
+.col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well {
+	background: #555;
+	color: #eee !important;
+	border: none;
+	margin: 24px;
 }
 
 .my-form-group {

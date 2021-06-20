@@ -1,6 +1,17 @@
+// Extract content from unnecessary wrappers
+
+document.body.insertBefore(
+	document.querySelector(
+		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
+	),
+	document.body.children[0]
+);
+document.body.removeChild(document.body.children[1]);
+
 // Get form reference
 
 const uglyAssForm = document.querySelector(".form-horizontal");
+uglyAssForm.parentElement.className = "";
 
 // Login form manipulation
 
