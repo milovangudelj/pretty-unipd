@@ -10,18 +10,13 @@ document.body.removeChild(document.body.children[1]);
 
 // Change images
 
+const myBaseUrl = "https://upo.milovangudelj.com/";
 document
 	.querySelector("img.img-responsive.pull-left")
-	.setAttribute(
-		"src",
-		"https://upo.milvangudelj.com/images/single-sign-on.png"
-	);
+	.setAttribute("src", myBaseUrl + "images/single-sign-on.png");
 document
 	.querySelector("img.img-responsive.pull-right")
-	.setAttribute(
-		"src",
-		"https://upo.milvangudelj.com/images/logo-unipd-chiaro.png"
-	);
+	.setAttribute("src", myBaseUrl + "images/logo-unipd-chiaro.png");
 
 // Get form reference
 
