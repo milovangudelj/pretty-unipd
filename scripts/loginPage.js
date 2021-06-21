@@ -82,8 +82,8 @@ oldInterface.insertBefore(
 
 // Load my html fragment
 
-$(document).ready(function () {
-	$(".new-interface").load(
+$(document).ready(async function () {
+	await $(".new-interface").load(
 		"https://upo.milovangudelj.com/fragments/myLogin.html"
 	);
 });
