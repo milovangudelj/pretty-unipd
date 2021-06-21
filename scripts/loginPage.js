@@ -88,11 +88,13 @@ $(document).ready(function () {
 		() => {
 			// Languages links
 
-			const ita = document.querySelector("a.my-lang-flag:first-of-type");
+			const ita = document.querySelector('img[title*="It"]');
 			ita.parentElement.setAttribute("href", location + "&lang=IT");
 
-			const eng = document.querySelector("a.my-lang-flag:last-of-type");
+			const eng = document.querySelector('img[title*="En"]');
 			eng.parentElement.setAttribute("href", location + "&lang=EN");
 		}
 	);
 });
+
+oldInterface.style.setProperty("display", "none");
