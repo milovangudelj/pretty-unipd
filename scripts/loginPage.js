@@ -74,7 +74,9 @@ document.body.appendChild(oldInterface);
 document.body.appendChild(newInterface);
 
 oldInterface.insertBefore(
-	document.querySelector("body.enhanced>div.container"),
+	document.querySelector(
+		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
+	),
 	null
 );
 
