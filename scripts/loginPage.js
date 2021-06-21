@@ -82,16 +82,17 @@ oldInterface.insertBefore(
 
 // Load my html fragment
 
-$(document).ready(async function () {
-	await $(".new-interface").load(
-		"https://upo.milovangudelj.com/fragments/myLogin.html"
+$(document).ready(function () {
+	$(".new-interface").load(
+		"https://upo.milovangudelj.com/fragments/myLogin.html",
+		() => {
+			// Languages links
+
+			const ita = document.querySelector("a.my-lang-flag:first-of-type");
+			ita.parentElement.setAttribute("href", location + "&lang=IT");
+
+			const eng = document.querySelector("a.my-lang-flag:last-of-type");
+			eng.parentElement.setAttribute("href", location + "&lang=EN");
+		}
 	);
 });
-
-// Languages links
-
-const ita = document.querySelector("a.my-lang-flag:first-of-type");
-ita.parentElement.setAttribute("href", location + "&lang=IT");
-
-const eng = document.querySelector("a.my-lang-flag:last-of-type");
-eng.parentElement.setAttribute("href", location + "&lang=EN");
