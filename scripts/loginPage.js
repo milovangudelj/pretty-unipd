@@ -98,3 +98,4 @@ $(document).ready(function () {
 });
 
 oldInterface.style.setProperty("display", "none");
+document.body.removeAttribute("class");
