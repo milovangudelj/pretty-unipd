@@ -56,8 +56,40 @@ document.body.insertBefore(
 );
 document.body.removeChild(document.body.children[1]);
 
+// Remove default stylesheets
+
+const defStyles = document.querySelector("style:first-of-type");
+const bootstrap = document.querySelectorAll('link[href*="bootstrap"]');
+document.head.removeChild(defStyles);
+bootstrap.forEach((el) => document.head.removeChild(el));
+
+// Create placeholders
+
+const oldInterface = document.createElement("div");
+oldInterface.setAttribute("class", "old-interface");
+const newInterface = document.createElement("div");
+newInterface.setAttribute("class", "new-interface");
+
+document.body.appendChild(oldInterface);
+document.body.appendChild(newInterface);
+
+oldInterface.insertBefore(
+	document.querySelector("body.enhanced>div.container"),
+	null
+);
+
 // Load my html fragment
 
 $(document).ready(function () {
-	$("body").load("https://upo.milovangudelj.com/fragments/myLogin.html");
+	$(".new-interface").load(
+		"https://upo.milovangudelj.com/fragments/myLogin.html"
+	);
 });
+
+// Languages links
+
+const ita = document.querySelector('.lang-flag > img[title*="It"]');
+ita.parentElement.setAttribute("href", location + "&lang=IT");
+
+const eng = document.querySelector('.lang-flag > img[title*="En"]');
+eng.parentElement.setAttribute("href", location + "&lang=EN");
