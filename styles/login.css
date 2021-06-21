@@ -1,0 +1,307 @@
+body {
+	display: flex;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+main {
+	margin: var(--container-spacing);
+	border-radius: var(--b-radius);
+	max-width: var(--main-width);
+	order: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Header */
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 32px;
+}
+
+.languages {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.lang-flag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3px 5px;
+	background-color: transparent;
+	border: 1px solid rgba(255, 255, 255, 0);
+	border-radius: var(--b-radius-s);
+	transition: 200ms ease all;
+}
+
+.lang-flag:first-of-type {
+	margin-right: 6px;
+}
+
+.lang-flag:hover,
+.lang-flag:focus {
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+.lang-flag img {
+	height: 12px;
+}
+
+.lang-flag.selected {
+	background-color: var(--dp02);
+	border-color: rgba(255, 255, 255, 0);
+}
+
+.logo-unipd {
+	height: 96px;
+}
+
+/* Login methods */
+
+.login-methods {
+	align-self: center;
+	padding: var(--container-spacing);
+	background-color: var(--dp01);
+	border-radius: var(--b-radius);
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+.my-btn {
+	width: 100%;
+	color: var(--he-text);
+	border: none;
+	border-radius: var(--b-radius);
+	padding: var(--btn-spacing);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Inter", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1.2px;
+	transition: 200ms ease all;
+	cursor: pointer;
+}
+
+/* Form */
+
+.my-form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.my-form-group:first-of-type {
+	margin-bottom: 24px;
+}
+
+.my-form-label {
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.my-form-control {
+	min-width: 200px;
+	font-family: "Inter", sans-serif;
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 17px;
+	padding: var(--btn-spacing);
+	background-color: transparent;
+	color: var(--he-text);
+	border: 1px solid var(--border);
+	border-radius: var(--b-radius);
+	transition: 200ms ease all;
+}
+
+.my-form-control::placeholder {
+	color: var(--me-text);
+}
+
+.my-form-control:focus,
+.my-form-control:hover {
+	background-color: var(--dp02);
+}
+
+.required-field {
+	color: var(--primary);
+}
+
+.my-submit-btn {
+	margin-top: 24px;
+	text-transform: uppercase;
+	background-color: var(--primary);
+}
+
+.my-submit-btn:hover,
+.my-submit-btn:focus {
+	background-color: var(--primary-v);
+	color: var(--he-text);
+}
+
+/* Alternative */
+
+.alternative-wrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: var(--container-spacing) 0;
+}
+
+.mid-line {
+	width: 96px;
+	height: 1px;
+	background-color: var(--border);
+}
+
+.alternative {
+	margin: 0 8px;
+	font-size: 12px;
+	font-weight: normal;
+	color: var(--me-text);
+}
+
+/* SPID Login */
+
+.spid-login,
+.spid-login-btn {
+	width: 100%;
+}
+
+.spid-login-btn {
+	background-color: var(--spid-color);
+}
+
+.spid-login-btn:hover,
+.spid-login-btn:focus {
+	background-color: var(--spid-color-v);
+}
+
+.spid-logo {
+	margin-right: 12px;
+}
+
+.spid-logo,
+.spid-logo img {
+	height: 18px;
+}
+
+/* Accordion */
+
+.help-accordion-wrap {
+	max-height: 34px;
+}
+
+.help-accordion {
+	width: 100%;
+	border-radius: var(--b-radius);
+	background-color: var(--dp01);
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.accordion-title {
+	background-color: var(--dp00);
+	border: 1px solid var(--border);
+	border-radius: var(--b-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 7px 24px;
+	cursor: pointer;
+	transition: 200ms ease all;
+}
+
+.accordion-title:hover,
+.accordion-title:focus {
+	background-color: var(--dp01);
+}
+
+.open > .accordion-title {
+	background-color: var(--dp02);
+}
+
+.accordion-icon {
+	height: 18px;
+	margin-right: 8px;
+}
+
+.accordion-links-wrap {
+	transition: all 200ms ease;
+}
+
+.accordion-link {
+	display: block;
+	padding: 8px 24px;
+	text-decoration: none;
+	transition: all 200ms ease;
+}
+
+.accordion-link:hover,
+.accordion-link:focus {
+	text-decoration: underline;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.emphasys {
+	letter-spacing: 0.25px;
+	font-weight: bold;
+}
+
+/* Loghi società esterne */
+
+img {
+	height: 36px;
+}
+
+.other-logos {
+	width: 0;
+	height: 100%;
+	position: relative;
+	align-self: flex-end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 24px;
+}
+
+.left {
+	order: 1;
+}
+
+.right {
+	order: 3;
+	align-items: flex-end;
+}
+
+.logos {
+	display: flex;
+}
+
+.logos a {
+	height: 36px;
+}
+
+.logos > a:first-of-type {
+	margin-right: 8px;
+}
+
+/* Other */
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}

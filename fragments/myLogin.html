@@ -1,0 +1,156 @@
+<main>
+	<div class="login-methods">
+		<h1>IDP UNIPD - SINGLE SIGN ON</h1>
+		<form
+			class="my-login-form"
+			id="user-login-form"
+			action="() => window.location.href.slice(28)"
+			method="post"
+			onsubmit="return login_via_js()"
+		>
+			<div class="my-form-group">
+				<label class="my-form-label" for="js_username"
+					>Email <span class="required-field">*</span></label
+				>
+				<input
+					class="my-form-control"
+					id="j_username_js"
+					name="j_username_js"
+					type="text"
+					value=""
+					tabindex="1"
+					placeholder="nome.cognome@unipd.it"
+					required
+				/>
+			</div>
+			<div class="my-form-group">
+				<label class="my-form-label" for="password"
+					>Password <span class="required-field">*</span></label
+				>
+				<input
+					class="my-form-control"
+					id="password"
+					name="j_password"
+					type="password"
+					value=""
+					tabindex="2"
+					placeholder="••••••••"
+					required
+				/>
+			</div>
+
+			<button
+				class="my-btn my-submit-btn"
+				type="submit"
+				name="_eventId_proceed"
+				id="login_button_js"
+				onclick="javascript:my_login_via_js()"
+				tabindex="3"
+			>
+				Accedi
+			</button>
+		</form>
+		<div class="alternative-wrapper">
+			<div class="mid-line"></div>
+			<span class="alternative">Oppure</span>
+			<div class="mid-line"></div>
+		</div>
+		<div class="spid-login">
+			<a
+				href="#"
+				class="my-btn spid-login-btn"
+				spid-idp-button="#spid-idp-button-medium-get"
+			>
+				<span class="spid-logo"
+					><img
+						src="/images/spid-ico-circle-bb.svg"
+						alt="Icona del pulsante di accesso con metodo SPID" /></span
+				>Entra con SPID
+			</a>
+		</div>
+	</div>
+	<div class="help-accordion-wrap">
+		<div class="help-accordion">
+			<div class="accordion-title">
+				<img
+					class="accordion-icon"
+					src="/images/help-icon.svg"
+					alt="Help icon"
+				/>Hai bisogno di aiuto?
+			</div>
+			<div class="accordion-links-wrap">
+				<a href="#" class="accordion-link"
+					>Ho un username di tipo
+					<span class="emphasys">@studenti.unipd.it</span> o numerico (ad
+					es. <span class="emphasys">1234567@unipd.it)</span></a
+				><a href="#" class="accordion-link"
+					>Ho un username per <span class="emphasys">dipendenti</span> (di
+					tipo <span class="emphasys">@unipd.it</span>)</a
+				>
+			</div>
+		</div>
+	</div>
+</main>
+<div class="other-logos left">
+	<div class="logo-unipd-wrapper">
+		<img
+			class="logo-unipd"
+			src="/images/logo-unipd-chiaro.png"
+			alt="Logo Università degli Studi di Padova"
+		/>
+	</div>
+	<div class="logos">
+		<a href="https://it.wikipedia.org/wiki/Single_sign-on" target="_blank"
+			><img src="/images/single-sign-on.png" alt="Logo Single Sign On"
+		/></a>
+	</div>
+</div>
+<div class="other-logos right">
+	<div class="languages">
+		<a class="lang-flag selected" href="#">
+			<img
+				src="https://shibidp.cca.unipd.it/idp/images/unipd_files/ico-ita.gif"
+				alt="Bandiera Italiana"
+				title="Italiano"
+			/> </a
+		><a class="lang-flag" href="#">
+			<img
+				src="https://shibidp.cca.unipd.it/idp/images/unipd_files/ico-eng.gif"
+				alt="English Flag"
+				title="English"
+			/>
+		</a>
+	</div>
+	<div class="logos">
+		<a href="https://idem.garr.it/" target="_blank"
+			><img
+				src="/images/logo-idem.png"
+				alt="Logo Società Idem Garr AAI" /></a
+		><a href="https://www.shibboleth.net/" target="_blank"
+			><img
+				src="/images/logo-shibboleth-color.png"
+				alt="Logo Società Shibboleth"
+		/></a>
+	</div>
+</div>
+<script>
+	const accordion = document.querySelector(".help-accordion");
+	const accordionLinks = document.querySelector(".accordion-links-wrap");
+	accordionLinks.style.cssText = `max-height: 0px;`;
+
+	let open = false;
+
+	const toggleAccordion = (e) => {
+		open = !accordion.contains(e.target) ? false : !open;
+
+		open
+			? accordion.classList.add("open")
+			: accordion.classList.remove("open");
+		accordionLinks.style.setProperty(
+			"max-height",
+			(open ? accordionLinks.scrollHeight : 0) + "px"
+		);
+	};
+
+	document.addEventListener("click", (e) => toggleAccordion(e));
+</script>

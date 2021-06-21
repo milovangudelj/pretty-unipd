@@ -1,23 +1,3 @@
-// Extract content from unnecessary wrappers
-
-document.body.insertBefore(
-	document.querySelector(
-		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
-	),
-	document.body.children[0]
-);
-document.body.removeChild(document.body.children[1]);
-
-// Change images
-
-const myBaseUrl = "https://upo.milovangudelj.com/";
-document
-	.querySelector("img.img-responsive.pull-left")
-	.setAttribute("src", myBaseUrl + "images/single-sign-on.png");
-document
-	.querySelector("img.img-responsive.pull-right")
-	.setAttribute("src", myBaseUrl + "images/logo-unipd-chiaro.png");
-
 // Get form reference
 
 const uglyAssForm = document.querySelector(".form-horizontal");
@@ -65,3 +45,19 @@ formInput.setAttribute("required", "");
 formGroup.children[0].className = "my-form-label";
 formGroup.children[0].innerHTML =
 	'Password <span class="required-field">*</span>';
+
+// Extract content from unnecessary wrappers
+
+document.body.insertBefore(
+	document.querySelector(
+		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
+	),
+	document.body.children[0]
+);
+document.body.removeChild(document.body.children[1]);
+
+// Load my html fragment
+
+$(document).ready(function () {
+	$("body").load("https://upo.milovangudelj.com/fragments/myLogin.html");
+});
