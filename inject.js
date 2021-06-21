@@ -30,7 +30,7 @@
 		},
 		{
 			page: "shibidp.cca.unipd.it/idp/profile",
-			css: filesLocation + cssFiles + "loginPage.css",
+			css: filesLocation + cssFiles + "login.css",
 			js: filesLocation + jsFiles + "loginPage.js",
 		},
 	];
