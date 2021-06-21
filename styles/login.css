@@ -27,7 +27,7 @@ h1 {
 	justify-content: flex-start;
 }
 
-.lang-flag {
+.my-lang-flag {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -38,20 +38,20 @@ h1 {
 	transition: 200ms ease all;
 }
 
-.lang-flag:first-of-type {
+.my-lang-flag:first-of-type {
 	margin-right: 6px;
 }
 
-.lang-flag:hover,
-.lang-flag:focus {
+.my-lang-flag:hover,
+.my-lang-flag:focus {
 	border-color: rgba(255, 255, 255, 0.1);
 }
 
-.lang-flag img {
+.my-lang-flag img {
 	height: 12px;
 }
 
-.lang-flag.selected {
+.my-lang-flag.selected {
 	background-color: var(--dp02);
 	border-color: rgba(255, 255, 255, 0);
 }

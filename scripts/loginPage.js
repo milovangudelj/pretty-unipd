@@ -90,8 +90,8 @@ $(document).ready(function () {
 
 // Languages links
 
-const ita = document.querySelector("a.lang-flag:first-of-type");
+const ita = document.querySelector("a.my-lang-flag:first-of-type");
 ita.parentElement.setAttribute("href", location + "&lang=IT");
 
-const eng = document.querySelector("a.lang-flag:last-of-type");
+const eng = document.querySelector("a.my-lang-flag:last-of-type");
 eng.parentElement.setAttribute("href", location + "&lang=EN");
