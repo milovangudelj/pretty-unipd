@@ -141,38 +141,38 @@ function moveForm() {
 	submitButton.removeAttribute("style"); // Removing default hidden styles
 	submitButton.setAttribute("class", "my-btn my-submit-btn"); // Add my class name
 
-	// Pull out form groups from their wrappers and hide them when done
-	let formField = document.querySelector(
-		"span#div_hidden_before_js > div.form-group"
-	);
-	uglyAssForm.insertBefore(formField, uglyAssForm.children[0]);
-	formField = document.querySelector("div#passwordbox > div.form-group");
-	uglyAssForm.insertBefore(formField, uglyAssForm.children[1]);
-	uglyAssForm.children[2].style.display = "none";
-	uglyAssForm.children[4].style.display = "none";
+	// // Pull out form groups from their wrappers and hide them when done
+	// let formField = document.querySelector(
+	// 	"span#div_hidden_before_js > div.form-group"
+	// );
+	// uglyAssForm.insertBefore(formField, uglyAssForm.children[0]);
+	// formField = document.querySelector("div#passwordbox > div.form-group");
+	// uglyAssForm.insertBefore(formField, uglyAssForm.children[1]);
+	// uglyAssForm.children[2].style.display = "none";
+	// uglyAssForm.children[4].style.display = "none";
 
-	// Pull out form input from unnecessary wrapper and add my class names
-	let formInput = document.querySelector("div > input#j_username_js");
-	let formGroup = formInput.parentElement.parentElement;
-	formGroup.insertBefore(formInput, formGroup.children[1]);
-	formGroup.removeChild(formGroup.children[2]);
-	formGroup.className = "my-form-group";
-	formInput.className = "my-form-control";
-	formInput.setAttribute("placeholder", "nome.cognome@unipd.it");
-	formInput.setAttribute("required", "");
-	formGroup.children[0].className = "my-form-label";
-	formGroup.children[0].innerHTML =
-		'Email <span class="required-field">*</span>';
+	// // Pull out form input from unnecessary wrapper and add my class names
+	// let formInput = document.querySelector("div > input#j_username_js");
+	// let formGroup = formInput.parentElement.parentElement;
+	// formGroup.insertBefore(formInput, formGroup.children[1]);
+	// formGroup.removeChild(formGroup.children[2]);
+	// formGroup.className = "my-form-group";
+	// formInput.className = "my-form-control";
+	// formInput.setAttribute("placeholder", "nome.cognome@unipd.it");
+	// formInput.setAttribute("required", "");
+	// formGroup.children[0].className = "my-form-label";
+	// formGroup.children[0].innerHTML =
+	// 	'Email <span class="required-field">*</span>';
 
-	// Pull out form input from unnecessary wrapper and add my class names
-	formInput = document.querySelector("div > input#password");
-	formGroup = formInput.parentElement.parentElement;
-	formGroup.insertBefore(formInput, formGroup.children[1]);
-	formGroup.removeChild(formGroup.children[2]);
-	formGroup.className = "my-form-group";
-	formInput.className = "my-form-control";
-	formInput.setAttribute("required", "");
-	formGroup.children[0].className = "my-form-label";
-	formGroup.children[0].innerHTML =
-		'Password <span class="required-field">*</span>';
+	// // Pull out form input from unnecessary wrapper and add my class names
+	// formInput = document.querySelector("div > input#password");
+	// formGroup = formInput.parentElement.parentElement;
+	// formGroup.insertBefore(formInput, formGroup.children[1]);
+	// formGroup.removeChild(formGroup.children[2]);
+	// formGroup.className = "my-form-group";
+	// formInput.className = "my-form-control";
+	// formInput.setAttribute("required", "");
+	// formGroup.children[0].className = "my-form-label";
+	// formGroup.children[0].innerHTML =
+	// 	'Password <span class="required-field">*</span>';
 }
