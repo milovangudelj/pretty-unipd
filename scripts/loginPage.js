@@ -20,10 +20,9 @@ const i18nData = localhost
 $(document).ready(() => {
 	$(".new-interface").load(fragment, async () => {
 		setLang();
+
 		const res = await fetch(i18nData);
 		const data = await res.json();
-
-		console.log(data[currentLang].form);
 
 		translate(data[currentLang]);
 	});
@@ -164,8 +163,8 @@ function oldInterfaceManipulation() {
 	const newInterface = document.createElement("div");
 	newInterface.setAttribute("class", "new-interface");
 
-	document.body.appendChild(oldInterface);
 	document.body.appendChild(newInterface);
+	document.body.appendChild(oldInterface);
 
 	oldInterface.insertBefore(
 		document.querySelector(
