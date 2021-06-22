@@ -8,8 +8,8 @@
 		},
 		"help": {
 			"title": "Hai bisogno di aiuto?",
-			"students": "Ho un username di tipo @studenti.unipd.it o numerico (ad es. 123456@unipd.it)",
-			"staff": "Ho un username per dipendenti (di tipo @unipd.it)"
+			"students": "Ho un username di tipo <span class=\"emphasys\">@studenti.unipd.it</span> o numerico (ad es. <span class=\"emphasys\">1234567@unipd.it)</span>",
+			"staff": "Ho un username per <span class=\"emphasys\">dipendenti</span> (di tipo <span class=\"emphasys\">@unipd.it</span>)"
 		}
 	},
 	"EN": {
@@ -21,8 +21,8 @@
 		},
 		"help": {
 			"title": "Need help?",
-			"students": "Not yet translated...",
-			"staff": "Not yet translated..."
+			"students": "Ho un username di tipo <span class=\"emphasys\">@studenti.unipd.it</span> o numerico (ad es. <span class=\"emphasys\">1234567@unipd.it)</span>",
+			"staff": "Ho un username per <span class=\"emphasys\">dipendenti</span> (di tipo <span class=\"emphasys\">@unipd.it</span>)"
 		}
 	}
 }
