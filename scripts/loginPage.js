@@ -6,6 +6,8 @@ let hasParams = url.includes("?"); // Check if url has any parameters
 if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
 let currentLang = url.includes("lang=EN") ? "EN" : "IT";
 
+if (!localhost) oldInterfaceManipulation();
+
 // Load my html fragment
 
 $(document).ready(() => {
@@ -14,7 +16,6 @@ $(document).ready(() => {
 			? "/fragments/myLogin.html"
 			: "https://upo.milovangudelj.com/fragments/myLogin.html",
 		async () => {
-			oldInterfaceManipulation();
 			setLang();
 			const res = await fetch(
 				localhost
