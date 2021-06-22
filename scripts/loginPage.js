@@ -6,28 +6,6 @@ let hasParams = url.includes("?"); // Check if url has any parameters
 if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
 let currentLang = url.includes("lang=EN") ? "EN" : "IT";
 
-if (!localhost) oldInterfaceManipulation();
-
-// Load my html fragment
-
-$(document).ready(() => {
-	$(".new-interface").load(
-		localhost
-			? "/fragments/myLogin.html"
-			: "https://upo.milovangudelj.com/fragments/myLogin.html",
-		async () => {
-			setLang();
-			const res = await fetch(
-				localhost
-					? "/i18n/loginPage.json"
-					: "https://upo.milovangudelj.com/i18n/loginPage.json"
-			);
-			const data = await res.json();
-			translate(data[currentLang]);
-		}
-	);
-});
-
 // Old interface manipulation
 
 const oldInterfaceManipulation = () => {
@@ -121,6 +99,28 @@ const oldInterfaceManipulation = () => {
 	oldInterface.style.setProperty("display", "none");
 	document.body.removeAttribute("class");
 };
+
+if (!localhost) oldInterfaceManipulation();
+
+// Load my html fragment
+
+$(document).ready(() => {
+	$(".new-interface").load(
+		localhost
+			? "/fragments/myLogin.html"
+			: "https://upo.milovangudelj.com/fragments/myLogin.html",
+		async () => {
+			setLang();
+			const res = await fetch(
+				localhost
+					? "/i18n/loginPage.json"
+					: "https://upo.milovangudelj.com/i18n/loginPage.json"
+			);
+			const data = await res.json();
+			translate(data[currentLang]);
+		}
+	);
+});
 
 /** Sets the language selectors' links */
 const setLang = () => {
