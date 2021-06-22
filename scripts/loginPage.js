@@ -24,6 +24,8 @@ $(document).ready(() => {
 		const res = await fetch(i18nData);
 		const data = await res.json();
 
+		moveForm();
+
 		translate(data[currentLang]);
 	});
 });
@@ -88,21 +90,56 @@ function translate(i18n) {
 
 /** Old interface manipulation */
 function oldInterfaceManipulation() {
+	// Create placeholders
+
+	const oldInterface = document.createElement("div");
+	oldInterface.setAttribute("class", "old-interface");
+	oldInterface.style.setProperty("display", "none");
+
+	const newInterface = document.createElement("div");
+	newInterface.setAttribute("class", "new-interface");
+
+	document.body.appendChild(newInterface);
+	document.body.appendChild(oldInterface);
+
+	oldInterface.insertBefore(
+		document.querySelector(
+			".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
+		),
+		null
+	);
+
+	// Remove old container and default body classes
+
+	document.body.removeChild(document.body.children[0]);
+	document.body.removeAttribute("class");
+
+	// Remove default stylesheets
+
+	const defStyles = document.querySelector("style:first-of-type");
+	const bootstrap = document.querySelectorAll('link[href*="bootstrap"]');
+	document.head.removeChild(defStyles);
+	bootstrap.forEach((el) => document.head.removeChild(el));
+}
+
+/** Move old form pieces to new interface */
+function moveForm() {
 	// Get form reference
 
 	const uglyAssForm = document.querySelector(".form-horizontal");
-	uglyAssForm.parentElement.className = "";
+	const myForm = document.querySelector(".my-login-form");
 
 	// Login form manipulation
 
 	uglyAssForm.children[1].style.display = "none"; // Hide radio buttons
+
 	const submitButton = document.querySelector(
 		"div.col-xs-12 > #login_button_js"
 	); // Get submit button
-	uglyAssForm.insertBefore(submitButton, uglyAssForm.children[3]); // Move it outside
-	uglyAssForm.removeChild(uglyAssForm.children[4]); // Remove old button wrapper
-	submitButton.className = "my-submit-btn"; // Add my class name
+	myForm.replaceChild(submitButton, myForm.children[2]); // Replace submit button with old one
+
 	submitButton.removeAttribute("style"); // Removing default hidden styles
+	submitButton.setAttribute("class", "my-btn my-submit-btn"); // Add my class name
 
 	// Pull out form groups from their wrappers and hide them when done
 	let formField = document.querySelector(
@@ -138,43 +175,4 @@ function oldInterfaceManipulation() {
 	formGroup.children[0].className = "my-form-label";
 	formGroup.children[0].innerHTML =
 		'Password <span class="required-field">*</span>';
-
-	// Extract content from unnecessary wrappers
-
-	document.body.insertBefore(
-		document.querySelector(
-			".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
-		),
-		document.body.children[0]
-	);
-	document.body.removeChild(document.body.children[1]);
-
-	// Remove default stylesheets
-
-	const defStyles = document.querySelector("style:first-of-type");
-	const bootstrap = document.querySelectorAll('link[href*="bootstrap"]');
-	document.head.removeChild(defStyles);
-	bootstrap.forEach((el) => document.head.removeChild(el));
-
-	// Create placeholders
-
-	const oldInterface = document.createElement("div");
-	oldInterface.setAttribute("class", "old-interface");
-	const newInterface = document.createElement("div");
-	newInterface.setAttribute("class", "new-interface");
-
-	document.body.appendChild(newInterface);
-	document.body.appendChild(oldInterface);
-
-	oldInterface.insertBefore(
-		document.querySelector(
-			".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
-		),
-		null
-	);
-
-	// Hide crappy interface
-
-	oldInterface.style.setProperty("display", "none");
-	document.body.removeAttribute("class");
 }
