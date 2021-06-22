@@ -8,8 +8,20 @@
 		},
 		"help": {
 			"title": "Hai bisogno di aiuto?",
-			"students": "Ho un username di tipo <span class=\"emphasys\">@studenti.unipd.it</span> o numerico (ad es. <span class=\"emphasys\">1234567@unipd.it)</span>",
-			"staff": "Ho un username per <span class=\"emphasys\">dipendenti</span> (di tipo <span class=\"emphasys\">@unipd.it</span>)"
+			"students": {
+				"0": "Ho un username di tipo ",
+				"1": "@studenti.unipd.it",
+				"2": " o numerico (ad es. ",
+				"3": "123456@unipd.it",
+				"4": ")"
+			},
+			"staff": {
+				"0": "Ho un username per ",
+				"1": "dipendenti",
+				"2": " (di tipo ",
+				"3": "@unipd.it",
+				"4": ")"
+			}
 		}
 	},
 	"EN": {
@@ -21,8 +33,20 @@
 		},
 		"help": {
 			"title": "Need help?",
-			"students": "Ho un username di tipo <span class=\"emphasys\">@studenti.unipd.it</span> o numerico (ad es. <span class=\"emphasys\">1234567@unipd.it)</span>",
-			"staff": "Ho un username per <span class=\"emphasys\">dipendenti</span> (di tipo <span class=\"emphasys\">@unipd.it</span>)"
+			"students": {
+				"0": "I have a student (",
+				"1": "@studenti.unipd.it",
+				"2": ") or numerical email (",
+				"3": "e.g. 123456@unipd.it",
+				"4": ")"
+			},
+			"staff": {
+				"0": "I have a ",
+				"1": "staff",
+				"2": " email (",
+				"3": "@unipd.it",
+				"4": ")"
+			}
 		}
 	}
 }

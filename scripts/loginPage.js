@@ -1,14 +1,27 @@
-// Fetch translations
-const i18n = async () =>
-	await fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error("HTTP error " + response.status);
-			}
-			return response.json();
-		})
-		.then((json) => json)
-		.catch((err) => console.error(err));
+// Language stuff
+
+let url = window.location.href;
+let hasParams = url.includes("?"); // Check if url has any parameters
+if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
+let currentLang = url.includes("lang=EN") ? "EN" : "IT";
+
+// Load my html fragment
+
+$(document).ready(() => {
+	$(".new-interface").load(
+		"/fragments/myLogin.html" ||
+			"https://upo.milovangudelj.com/fragments/myLogin.html",
+		async () => {
+			setLang();
+			const res = await fetch(
+				"/i18n/loginPage.json" ||
+					"https://upo.milovangudelj.com/i18n/loginPage.json"
+			);
+			const data = await res.json();
+			translate(data[currentLang]);
+		}
+	);
+});
 
 // Old interface manipulation
 
@@ -104,22 +117,6 @@ const oldInterfaceManipulation = () => {
 	document.body.removeAttribute("class");
 };
 
-// Load my html fragment
-
-$(document).ready(function () {
-	$(".new-interface").load(
-		"https://upo.milovangudelj.com/fragments/myLogin.html",
-		() => setLang()
-	);
-});
-
-// Language stuff
-
-let url = window.location.href;
-let hasParams = url.includes("?"); // Check if url has any parameters
-if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
-let currentLang = url.includes("lang=EN") ? "EN" : "IT";
-
 /** Sets the language selectors' links */
 const setLang = () => {
 	let flags = [
@@ -152,7 +149,26 @@ const setUrl = (lang = "IT") => {
 	return newUrl;
 };
 
-// i18n
-document.querySelector(".my-submit-btn").innerText = i18n().then(
-	() => form.loginBtn.currentLang
-);
+/** Translates the form to the selected language	 */
+const translate = (i18n) => {
+	let form = i18n.form;
+	document.querySelector("#j_username_js").placeholder = form.emailPlaceholder;
+	document.querySelector(".my-submit-btn").innerText = form.loginBtn;
+	document.querySelector(".alternative").innerText = form.or;
+	document.querySelector(".spid-login-btn > span").innerText = form.spid;
+
+	let help = i18n.help;
+	document.querySelector(".accordion-title > span").innerText = help.title;
+
+	[
+		...document.querySelector(".accordion-link:first-of-type").children,
+	].forEach((el, i) => {
+		el.innerText = help.students[i];
+	});
+
+	[...document.querySelector(".accordion-link:last-of-type").children].forEach(
+		(el, i) => {
+			el.innerText = help.staff[i];
+		}
+	);
+};
