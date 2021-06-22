@@ -14,6 +14,7 @@ $(document).ready(() => {
 			? "/fragments/myLogin.html"
 			: "https://upo.milovangudelj.com/fragments/myLogin.html",
 		async () => {
+			oldInterfaceManipulation();
 			setLang();
 			const res = await fetch(
 				localhost
