@@ -102,24 +102,6 @@ const oldInterfaceManipulation = () => {
 
 if (!localhost) oldInterfaceManipulation();
 
-// Load my html fragment
-
-const fragment = localhost
-	? "/fragments/myLogin.html"
-	: "https://upo.milovangudelj.com/fragments/myLogin.html";
-const i18nData = localhost
-	? "/i18n/loginPage.json"
-	: "https://upo.milovangudelj.com/i18n/loginPage.json";
-
-$(document).ready(() => {
-	$(".new-interface").load(fragment, async () => {
-		setLang();
-		const res = await fetch(i18nData);
-		const data = await res.json();
-		translate(data[currentLang]);
-	});
-});
-
 /** Sets the language selectors' links */
 const setLang = () => {
 	console.log("Setting language...");
@@ -177,3 +159,21 @@ const translate = (i18n) => {
 		}
 	);
 };
+
+// Load my html fragment
+
+const fragment = localhost
+	? "/fragments/myLogin.html"
+	: "https://upo.milovangudelj.com/fragments/myLogin.html";
+const i18nData = localhost
+	? "/i18n/loginPage.json"
+	: "https://upo.milovangudelj.com/i18n/loginPage.json";
+
+$(document).ready(() => {
+	$(".new-interface").load(fragment, async () => {
+		setLang();
+		const res = await fetch(i18nData);
+		const data = await res.json();
+		translate(data[currentLang]);
+	});
+});
