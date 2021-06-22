@@ -1,3 +1,16 @@
+// Fetch translations
+fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
+	.then((response) => {
+		if (!response.ok) {
+			throw new Error("HTTP error " + response.status);
+		}
+		return response.json();
+	})
+	.then((json) => {
+		console.log(json);
+	})
+	.catch((err) => console.error(err));
+
 // Get form reference
 
 const uglyAssForm = document.querySelector(".form-horizontal");

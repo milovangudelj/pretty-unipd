@@ -1,0 +1,34 @@
+{
+	"form": {
+		"emailPlaceholder": {
+			"IT": "nome.cognome@unipd.it",
+			"EN": "name.surname@unipd.it"
+		},
+		"loginBtn": {
+			"IT": "ACCEDI",
+			"EN": "LOGIN"
+		},
+		"or": {
+			"IT": "Oppure",
+			"EN": "Or"
+		},
+		"spid": {
+			"IT": "Entra con SPID",
+			"EN": "Login with SPID"
+		}
+	},
+	"help": {
+		"title": {
+			"IT": "Hai bisogno di aiuto?",
+			"EN": "Need help?"
+		},
+		"students": {
+			"IT": "Ho un username di tipo @studenti.unipd.it o numerico (ad es. 123456@unipd.it)",
+			"EN": "Not yet translated..."
+		},
+		"staff": {
+			"IT": "Ho un username per dipendenti (di tipo @unipd.it)",
+			"EN": "Not yet translated..."
+		}
+	}
+}
