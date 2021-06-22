@@ -1,13 +1,14 @@
 // Fetch translations
-let i18n = await fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
-	.then((response) => {
-		if (!response.ok) {
-			throw new Error("HTTP error " + response.status);
-		}
-		return response.json();
-	})
-	.then((json) => json)
-	.catch((err) => console.error(err));
+const i18n = async () =>
+	await fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error("HTTP error " + response.status);
+			}
+			return response.json();
+		})
+		.then((json) => json)
+		.catch((err) => console.error(err));
 
 // Old interface manipulation
 
@@ -152,5 +153,6 @@ const setUrl = (lang = "IT") => {
 };
 
 // i18n
-document.querySelector(".my-submit-btn").innerText =
-	i18n.form.loginBtn.currentLang;
+document.querySelector(".my-submit-btn").innerText = i18n().then(
+	() => form.loginBtn.currentLang
+);
