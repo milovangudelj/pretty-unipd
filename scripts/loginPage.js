@@ -1,5 +1,5 @@
 // Fetch translations
-let i18n = fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
+let i18n = await fetch("https://upo.milovangudelj.com/i18n/loginPage.json")
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error("HTTP error " + response.status);
@@ -152,6 +152,5 @@ const setUrl = (lang = "IT") => {
 };
 
 // i18n
-document.querySelector(".my-submit-btn").innerText = i18n.then(
-	(json) => json
-).form.loginBtn.currentLang;
+document.querySelector(".my-submit-btn").innerText =
+	i18n.form.loginBtn.currentLang;
