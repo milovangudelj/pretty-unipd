@@ -85,17 +85,49 @@ oldInterface.insertBefore(
 $(document).ready(function () {
 	$(".new-interface").load(
 		"https://upo.milovangudelj.com/fragments/myLogin.html",
-		() => {
-			// Languages links
-
-			const ita = document.querySelector('img[title*="It"]');
-			ita.parentElement.setAttribute("href", location + "&lang=IT");
-
-			const eng = document.querySelector('img[title*="En"]');
-			eng.parentElement.setAttribute("href", location + "&lang=EN");
-		}
+		() => setLang()
 	);
 });
+
+// Language stuff
+
+let url = window.location.href;
+let hasParams = url.includes("?"); // Check if url has any parameters
+if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
+
+/** Sets the language selectors' links */
+const setLang = () => {
+	let flags = [
+		document.querySelector('img[title*="It"]').parentElement,
+		document.querySelector('img[title*="En"]').parentElement,
+	];
+
+	// Set correct urls for language selectors
+
+	flags[0].setAttribute("href", setUrl("IT"));
+	flags[1].setAttribute("href", setUrl("EN"));
+
+	// Set 'selected' class on flags based on current url lang
+
+	flags.forEach((el) => el.classList.remove("selected"));
+	flags[!url.includes("lang=EN") ? 0 : 1].classList.add("selected");
+};
+
+/** Sets the correct link for a given language */
+const setUrl = (lang = "lang=IT") => {
+	let newUrl;
+
+	if (url.includes("lang")) {
+		let langParam = url.substr(url.indexOf("lang="), 7);
+		newUrl = url.replace(langParam, "lang=" + lang);
+	} else {
+		newUrl = url + (hasParams ? "&" : "?") + "lang=" + lang;
+	}
+
+	return newUrl;
+};
+
+// Hide crappy interface
 
 oldInterface.style.setProperty("display", "none");
 document.body.removeAttribute("class");
