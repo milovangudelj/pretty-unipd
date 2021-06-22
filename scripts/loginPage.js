@@ -22,6 +22,9 @@ $(document).ready(() => {
 		setLang();
 		const res = await fetch(i18nData);
 		const data = await res.json();
+
+		console.log(data[currentLang].form);
+
 		translate(data[currentLang]);
 	});
 });
