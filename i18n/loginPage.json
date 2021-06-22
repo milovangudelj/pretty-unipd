@@ -1,34 +1,28 @@
 {
-	"form": {
-		"emailPlaceholder": {
-			"IT": "nome.cognome@unipd.it",
-			"EN": "name.surname@unipd.it"
+	"IT": {
+		"form": {
+			"emailPlaceholder": "nome.cognome@unipd.it",
+			"loginBtn": "ACCEDI",
+			"or": "Oppure",
+			"spid": "Entra con SPID"
 		},
-		"loginBtn": {
-			"IT": "ACCEDI",
-			"EN": "LOGIN"
-		},
-		"or": {
-			"IT": "Oppure",
-			"EN": "Or"
-		},
-		"spid": {
-			"IT": "Entra con SPID",
-			"EN": "Login with SPID"
+		"help": {
+			"title": "Hai bisogno di aiuto?",
+			"students": "Ho un username di tipo @studenti.unipd.it o numerico (ad es. 123456@unipd.it)",
+			"staff": "Ho un username per dipendenti (di tipo @unipd.it)"
 		}
 	},
-	"help": {
-		"title": {
-			"IT": "Hai bisogno di aiuto?",
-			"EN": "Need help?"
+	"EN": {
+		"form": {
+			"emailPlaceholder": "name.surname@unipd.it",
+			"loginBtn": "LOGIN",
+			"or": "Or",
+			"spid": "Login with SPID"
 		},
-		"students": {
-			"IT": "Ho un username di tipo @studenti.unipd.it o numerico (ad es. 123456@unipd.it)",
-			"EN": "Not yet translated..."
-		},
-		"staff": {
-			"IT": "Ho un username per dipendenti (di tipo @unipd.it)",
-			"EN": "Not yet translated..."
+		"help": {
+			"title": "Need help?",
+			"students": "Not yet translated...",
+			"staff": "Not yet translated..."
 		}
 	}
 }
