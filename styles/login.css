@@ -297,6 +297,10 @@ img {
 
 /* Other */
 
+.hidden {
+	display: none;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;

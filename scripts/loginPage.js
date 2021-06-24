@@ -24,7 +24,7 @@ $(document).ready(() => {
 		const res = await fetch(i18nData);
 		const data = await res.json();
 
-		moveForm();
+		// moveForm();
 
 		translate(data[currentLang]);
 	});
@@ -92,22 +92,22 @@ function translate(i18n) {
 function oldInterfaceManipulation() {
 	// Create placeholders
 
-	const oldInterface = document.createElement("div");
-	oldInterface.setAttribute("class", "old-interface");
-	oldInterface.style.setProperty("display", "none");
+	// const oldInterface = document.createElement("div");
+	// oldInterface.setAttribute("class", "old-interface");
+	// oldInterface.style.setProperty("display", "none");
 
 	const newInterface = document.createElement("div");
 	newInterface.setAttribute("class", "new-interface");
 
 	document.body.appendChild(newInterface);
-	document.body.appendChild(oldInterface);
+	// document.body.appendChild(oldInterface);
 
-	oldInterface.insertBefore(
-		document.querySelector(
-			".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
-		),
-		null
-	);
+	// oldInterface.insertBefore(
+	// 	document.querySelector(
+	// 		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
+	// 	),
+	// 	null
+	// );
 
 	// Remove old container and default body classes
 
