@@ -24,7 +24,7 @@ $(document).ready(() => {
 		const res = await fetch(i18nData);
 		const data = await res.json();
 
-		// moveForm();
+		moveForm();
 
 		translate(data[currentLang]);
 	});
@@ -126,19 +126,19 @@ function oldInterfaceManipulation() {
 function moveForm() {
 	// Get form reference
 
-	const uglyAssForm = document.querySelector(".form-horizontal");
+	// const uglyAssForm = document.querySelector(".form-horizontal");
 	const myForm = document.querySelector(".my-login-form");
 	myForm.setAttribute("action", url.slice(url.indexOf("/idp")));
 
 	// Login form manipulation
 
-	uglyAssForm.children[1].style.display = "none"; // Hide radio buttons
+	// uglyAssForm.children[1].style.display = "none"; // Hide radio buttons
 
-	const submitButton = document.querySelector(
-		"div.col-xs-12 > #login_button_js"
-	); // Get submit button
-	myForm.replaceChild(submitButton, myForm.children[2]); // Replace submit button with old one
+	// const submitButton = document.querySelector(
+	// 	"div.col-xs-12 > #login_button_js"
+	// ); // Get submit button
+	// myForm.replaceChild(submitButton, myForm.children[2]); // Replace submit button with old one
 
-	submitButton.removeAttribute("style"); // Removing default hidden styles
-	submitButton.setAttribute("class", "my-btn my-submit-btn"); // Add my class name
+	// submitButton.removeAttribute("style"); // Removing default hidden styles
+	// submitButton.setAttribute("class", "my-btn my-submit-btn"); // Add my class name
 }
