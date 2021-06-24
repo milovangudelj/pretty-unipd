@@ -21,6 +21,13 @@
 					placeholder="nome.cognome@unipd.it"
 					required
 				/>
+				<input
+					class="hidden"
+					id="j_username"
+					name="j_username"
+					type="text"
+					value=""
+				/>
 			</div>
 			<div class="my-form-group">
 				<label class="my-form-label" for="password"
@@ -55,7 +62,7 @@
 				type="submit"
 				name="_eventId_proceed"
 				id="login_button_js"
-				onclick="javascript:my_login_via_js()"
+				onclick="javascript:login_via_js()"
 				tabindex="3"
 			>
 				Accedi

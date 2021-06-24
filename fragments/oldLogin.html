@@ -1,0 +1,42 @@
+<form
+	id="user-login-form"
+	action="/idp/profile/SAML2/Redirect/SSO?execution=e2s3"
+	method="post"
+	onsubmit="return login_via_js()"
+	data-nordpass-autofill="login"
+	data-np-checked="1"
+	data-nordpass-watching="1"
+>
+	<div>
+		<div>
+			<input id="j_username" name="j_username" type="text" value="" />
+		</div>
+
+		<div>
+			<input id="j_username_js" name="j_username_js" type="text" value="" />
+		</div>
+	</div>
+
+	<div id="passwordbox">
+		<label for="password">Password</label>
+
+		<input
+			id="password"
+			name="j_password"
+			type="password"
+			value=""
+			tabindex="3"
+		/>
+	</div>
+
+	<button
+		type="submit"
+		name="_eventId_proceed"
+		id="login_button_js"
+		onclick="javascript:login_via_js()"
+		style="display: inline; visibility: visible"
+		tabindex="6"
+	>
+		Accedi
+	</button>
+</form>
