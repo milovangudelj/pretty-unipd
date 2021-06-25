@@ -1,38 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
-:root {
-	--semibold: 600;
-	--b-radius: 8px;
-	--b-radius-s: 4px;
-	--btn-spacing: 11px;
-	--container-spacing: 24px;
-	--main-width: 450px;
-
-	--primary: #89000c;
-	--primary-v: #a0000d;
-	--spid-color: #0066cc;
-	--spid-color-v: #006fdf;
-	--dp00: #202124;
-	--dp01: #303134;
-	--dp02: #404144;
-	--dp03: #505154;
-	--dp04: #606164;
-	--he-text: rgba(255, 255, 255, 1);
-	--me-text: rgba(255, 255, 255, 0.6);
-	--le-text: rgba(255, 255, 255, 0.4);
-	--border: rgba(255, 255, 255, 0.24);
-}
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-body,
-#page .heading-title,
-a.brand,
-.navbar .nav > li > a {
 	font-family: "Inter", sans-serif;
 }
 

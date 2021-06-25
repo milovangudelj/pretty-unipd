@@ -1,4 +1,4 @@
-// Language stuff
+// Url stuff
 
 let url = window.location.href;
 let localhost = !url.includes("unipd.it");
@@ -6,8 +6,7 @@ let hasParams = url.includes("?"); // Check if url has any parameters
 if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
 let currentLang = url.includes("lang=EN") ? "EN" : "IT";
 
-if (!localhost && !document.body.hasAttribute("onload"))
-	oldInterfaceManipulation();
+if (!localhost && !document.body.hasAttribute("onload")) swapInterfaces();
 
 // Load my html fragment
 
@@ -26,7 +25,7 @@ if (!document.body.hasAttribute("onload")) {
 			const res = await fetch(i18nData);
 			const data = await res.json();
 
-			moveForm();
+			setFormAction();
 
 			translate(data[currentLang]);
 		});
@@ -91,26 +90,14 @@ function translate(i18n) {
 	);
 }
 
-/** Old interface manipulation */
-function oldInterfaceManipulation() {
-	// Create placeholders
-
-	// const oldInterface = document.createElement("div");
-	// oldInterface.setAttribute("class", "old-interface");
-	// oldInterface.style.setProperty("display", "none");
+/** Swaps old interface with the new one and removes old styles */
+function swapInterfaces() {
+	// Add container for the new interface
 
 	const newInterface = document.createElement("div");
 	newInterface.setAttribute("class", "new-interface");
 
 	document.body.appendChild(newInterface);
-	// document.body.appendChild(oldInterface);
-
-	// oldInterface.insertBefore(
-	// 	document.querySelector(
-	// 		".col-md-offset-2.col-md-8.col-xs-offset-1.col-xs-10.well"
-	// 	),
-	// 	null
-	// );
 
 	// Remove old container and default body classes
 
@@ -125,23 +112,8 @@ function oldInterfaceManipulation() {
 	if (bootstrap) bootstrap.forEach((el) => document.head.removeChild(el));
 }
 
-/** Move old form pieces to new interface */
-function moveForm() {
-	// Get form reference
-
-	// const uglyAssForm = document.querySelector(".form-horizontal");
+/** Set action attribute for my form */
+function setFormAction() {
 	const myForm = document.querySelector(".my-login-form");
 	myForm.setAttribute("action", url.slice(url.indexOf("/idp")));
-
-	// Login form manipulation
-
-	// uglyAssForm.children[1].style.display = "none"; // Hide radio buttons
-
-	// const submitButton = document.querySelector(
-	// 	"div.col-xs-12 > #login_button_js"
-	// ); // Get submit button
-	// myForm.replaceChild(submitButton, myForm.children[2]); // Replace submit button with old one
-
-	// submitButton.removeAttribute("style"); // Removing default hidden styles
-	// submitButton.setAttribute("class", "my-btn my-submit-btn"); // Add my class name
 }
