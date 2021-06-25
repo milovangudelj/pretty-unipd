@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.2.04
+// @version      0.2.05
 // @description  It changes the styling of every page on University of Padua's website
 // @author       Milovan Gudelj
-// @match        https://*.unipd.it/*
+// @match        https://shibidp.cca.unipd.it/idp/profile/SAML2/Redirect/SSO
 // @icon         https://www.google.com/s2/favicons?domain=unipd.it
 // @grant        none
 // ==/UserScript==
