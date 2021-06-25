@@ -6,7 +6,8 @@ let hasParams = url.includes("?"); // Check if url has any parameters
 if (url.charAt(url.length - 1) === "#") url = url.slice(0, url.length - 2); // Remove # from end
 let currentLang = url.includes("lang=EN") ? "EN" : "IT";
 
-if (!localhost) oldInterfaceManipulation();
+if (!localhost && !document.body.hasAttribute("onload"))
+	oldInterfaceManipulation();
 
 // Load my html fragment
 
@@ -17,18 +18,20 @@ const i18nData = localhost
 	? "/i18n/loginPage.json"
 	: "https://upo.milovangudelj.com/i18n/loginPage.json";
 
-$(document).ready(() => {
-	$(".new-interface").load(fragment, async () => {
-		setLang();
+if (!document.body.hasAttribute("onload")) {
+	$(document).ready(() => {
+		$(".new-interface").load(fragment, async () => {
+			setLang();
 
-		const res = await fetch(i18nData);
-		const data = await res.json();
+			const res = await fetch(i18nData);
+			const data = await res.json();
 
-		moveForm();
+			moveForm();
 
-		translate(data[currentLang]);
+			translate(data[currentLang]);
+		});
 	});
-});
+}
 
 /** Sets the language selectors' links */
 function setLang() {
@@ -118,8 +121,8 @@ function oldInterfaceManipulation() {
 
 	const defStyles = document.querySelector("style:first-of-type");
 	const bootstrap = document.querySelectorAll('link[href*="bootstrap"]');
-	document.head.removeChild(defStyles);
-	bootstrap.forEach((el) => document.head.removeChild(el));
+	if (defStyles) document.head.removeChild(defStyles);
+	if (bootstrap) bootstrap.forEach((el) => document.head.removeChild(el));
 }
 
 /** Move old form pieces to new interface */
