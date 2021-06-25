@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.2.07
+// @version      0.2.08
 // @description  It changes the styling of every page on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://shibidp.cca.unipd.it/idp/*
@@ -50,10 +50,14 @@
 	document.head.appendChild(jQuery);
 
 	// Append base and variables stylesheets
-	const baseStyles, cssVariables = document.createElement("link");
+	const cssVariables = document.createElement("link");
+	const baseStyles = document.createElement("link");
 	cssVariables.setAttribute("rel", "stylesheet");
 	baseStyles.setAttribute("rel", "stylesheet");
-	cssVariables.setAttribute("href", filesLocation + cssFiles + "variables.css");
+	cssVariables.setAttribute(
+		"href",
+		filesLocation + cssFiles + "variables.css"
+	);
 	baseStyles.setAttribute("href", filesLocation + cssFiles + "base.css");
 	document.head.appendChild(cssVariables);
 	document.head.appendChild(baseStyles);
