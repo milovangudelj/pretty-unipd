@@ -1,0 +1,21 @@
+[
+   {
+      "url": "elearning.dei.unipd.it/user/policy.php",
+      "html": "policy.html",
+      "css": "sitePolicyAgreement.css",
+      "js": "policy.js"
+   },
+   {
+      "url": "elearning.dei.unipd.it/UnipdPolicy.html",
+      "css": "unipdPolicy.css"
+   },
+   {
+      "url": "elearning.dei.unipd.it/course",
+      "css": "coursePage.css"
+   },
+   {
+      "url": "shibidp.cca.unipd.it/idp/profile",
+      "css": "login.css",
+      "js": "loginPage.js"
+   }
+]
