@@ -1,10 +1,16 @@
 [
    {
       "url": "elearning.dei.unipd.it/user/policy.php",
-      "js": "/policy.js"
+      "js": "/policy.js",
+      "css":{
+         "base": false
+      }
    },
    {
       "url": "elearning.dei.unipd.it/UnipdPolicy.html",
-      "css": "/unipdPolicy.css"
+      "css": {
+         "base":true,
+         "custom":"/unipdPolicy.css"
+      }
    }
 ]

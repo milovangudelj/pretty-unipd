@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.04
+// @version      0.3.06
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -48,27 +48,30 @@ function Path() {
 	jQuery.setAttribute("crossorigin", "anonymous");
 	document.head.appendChild(jQuery);
 
-	// Append base and variables stylesheets
-	const cssVariables = document.createElement("link");
-	const baseStyles = document.createElement("link");
-
-	cssVariables.setAttribute("rel", "stylesheet");
-	baseStyles.setAttribute("rel", "stylesheet");
-
-	cssVariables.setAttribute("href", path.css + "/variables.css");
-	baseStyles.setAttribute("href", path.css + "/base.css");
-
-	document.head.appendChild(cssVariables);
-	document.head.appendChild(baseStyles);
-
-	// Append specific stylesheet
 	if (page) {
-		if (locations[page].css) {
+		// Append base and variables stylesheets
+		if (locations[page].css.base) {
+			const cssVariables = document.createElement("link");
+			const baseStyles = document.createElement("link");
+
+			cssVariables.setAttribute("rel", "stylesheet");
+			baseStyles.setAttribute("rel", "stylesheet");
+
+			cssVariables.setAttribute("href", path.css + "/variables.css");
+			baseStyles.setAttribute("href", path.css + "/base.css");
+
+			document.head.appendChild(cssVariables);
+			document.head.appendChild(baseStyles);
+		}
+
+		// Append specific stylesheet
+		if (locations[page].css.custom) {
 			const myStyles = document.createElement("link");
 			myStyles.setAttribute("rel", "stylesheet");
 			myStyles.setAttribute("href", path.css + locations[page].css);
 			document.head.appendChild(myStyles);
 		}
+		// Append specific javascript
 		if (locations[page].js) {
 			const myScript = document.createElement("script");
 			myScript.setAttribute("type", "application/javascript");
