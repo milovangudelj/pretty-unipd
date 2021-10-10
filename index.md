@@ -1,4 +1,4 @@
-# Elearning DEI - Pretty Login
+# Pretty Unipd
 
 A graphic enhancement for some of the pages of the Department of Information Engineering at the University of Padua. [Elearning DEI](https://elearning.dei.unipd.it)
 
