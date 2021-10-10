@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Unipd overhaul
 // @namespace    http://tampermonkey.net/
-// @version      0.3.00
+// @version      0.3.01
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -9,19 +9,34 @@
 // @grant        none
 // ==/UserScript==
 
-import locations from "./locations.json";
+const checkPath = (l, s) => {
+	// Checks if current location matches with one of the pages provided in the second parameter
+	let page = -1;
 
-(function () {
+	s.forEach((p, i) => {
+		if (page === -1 && l.includes(p.url)) page = i;
+	});
+
+	return page;
+};
+
+function Path() {
+	this.base = "https://upo.milovangudelj.com";
+	this.css = `${this.base}/styles`;
+	this.js = `${this.base}/scripts`;
+	this.html = `${this.base}/fragments`;
+}
+
+(async function () {
 	"use strict";
 
-	const filesLocation = "https://upo.milovangudelj.com/";
-	const cssFiles = "styles/";
-	const jsFiles = "scripts/";
-	const htmlFiles = "fragments/";
+	const path = new Path();
+	let locations = await fetch(`${path.base}/locations.json`).then((res) =>
+		res.json()
+	);
 
 	// Check which page the user is currently on
-	const location = window.location.href;
-	let page = checkPath(location, locations);
+	let page = checkPath(window.location.href, locations);
 
 	// Append jQuery
 	const jQuery = document.createElement("script");
@@ -40,11 +55,8 @@ import locations from "./locations.json";
 	cssVariables.setAttribute("rel", "stylesheet");
 	baseStyles.setAttribute("rel", "stylesheet");
 
-	cssVariables.setAttribute(
-		"href",
-		filesLocation + cssFiles + "variables.css"
-	);
-	baseStyles.setAttribute("href", filesLocation + cssFiles + "base.css");
+	cssVariables.setAttribute("href", path.css + "variables.css");
+	baseStyles.setAttribute("href", path.css + "base.css");
 
 	document.head.appendChild(cssVariables);
 	document.head.appendChild(baseStyles);
@@ -53,25 +65,14 @@ import locations from "./locations.json";
 	if (page) {
 		const myStyles = document.createElement("link");
 		myStyles.setAttribute("rel", "stylesheet");
-		myStyles.setAttribute("href", filesLocation + cssFiles + locations[page].css);
+		myStyles.setAttribute("href", path.css + locations[page].css);
 		document.head.appendChild(myStyles);
 
 		if (locations[page].js) {
 			const myScript = document.createElement("script");
 			myScript.setAttribute("type", "application/javascript");
-			myScript.setAttribute("src", filesLocation + jsFiles + locations[page].js);
+			myScript.setAttribute("src", path.js + locations[page].js);
 			document.head.appendChild(myScript);
 		}
-	}
-
-	function checkPath(l, s) {
-		// Checks if current location matches with one of the pages provided in the second parameter
-		let page = -1;
-
-		s.forEach((p, i) => {
-			if (page === -1 && l.includes(p.url)) page = i;
-		});
-
-		return page;
 	}
 })();
