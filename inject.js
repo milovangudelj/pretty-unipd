@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Unipd overhaul
+// @name         pretty Unipd
 // @namespace    http://tampermonkey.net/
 // @version      0.3.01
 // @description  It changes the styling of a few pages on University of Padua's website
