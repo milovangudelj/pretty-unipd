@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         pretty Unipd
+// @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.01
+// @version      0.3.02
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
