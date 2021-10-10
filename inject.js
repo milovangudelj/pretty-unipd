@@ -55,8 +55,8 @@ function Path() {
 	cssVariables.setAttribute("rel", "stylesheet");
 	baseStyles.setAttribute("rel", "stylesheet");
 
-	cssVariables.setAttribute("href", path.css + "variables.css");
-	baseStyles.setAttribute("href", path.css + "base.css");
+	cssVariables.setAttribute("href", path.css + "/variables.css");
+	baseStyles.setAttribute("href", path.css + "/base.css");
 
 	document.head.appendChild(cssVariables);
 	document.head.appendChild(baseStyles);
