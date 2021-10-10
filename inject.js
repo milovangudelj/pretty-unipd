@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.03
+// @version      0.3.04
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -63,11 +63,12 @@ function Path() {
 
 	// Append specific stylesheet
 	if (page) {
-		const myStyles = document.createElement("link");
-		myStyles.setAttribute("rel", "stylesheet");
-		myStyles.setAttribute("href", path.css + locations[page].css);
-		document.head.appendChild(myStyles);
-
+		if (locations[page].css) {
+			const myStyles = document.createElement("link");
+			myStyles.setAttribute("rel", "stylesheet");
+			myStyles.setAttribute("href", path.css + locations[page].css);
+			document.head.appendChild(myStyles);
+		}
 		if (locations[page].js) {
 			const myScript = document.createElement("script");
 			myScript.setAttribute("type", "application/javascript");
