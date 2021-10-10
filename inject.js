@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.07
+// @version      0.3.08
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -48,7 +48,7 @@ function Path() {
 	jQuery.setAttribute("crossorigin", "anonymous");
 	document.head.appendChild(jQuery);
 
-	if (page) {
+	if (page >= 0) {
 		// Append base and variables stylesheets
 		if (locations[page].css.base) {
 			const cssVariables = document.createElement("link");

@@ -1,16 +1,17 @@
 [
-   {
-      "url": "elearning.dei.unipd.it/user/policy.php",
-      "js": "/policy.js",
-      "css":{
-         "base": false
-      }
-   },
-   {
-      "url": "elearning.dei.unipd.it/UnipdPolicy.html",
-      "css": {
-         "base":true,
-         "custom":"/unipdPolicy.css"
-      }
-   }
+	{
+		"url": "elearning.dei.unipd.it/user/policy.php",
+		"js": "/policy.js",
+		"css": {
+			"base": false
+		}
+	},
+	{
+		"url": "shibidp.cca.unipd.it/idp/profile/SAML2/Redirect/SSO",
+		"js": "/loginPage.js",
+		"css": {
+			"base": true,
+			"custom": "/login.css"
+		}
+	}
 ]
