@@ -1,5 +1,13 @@
 [
 	{
+		"url": "dei.unipd.it",
+		"js": "/navbar.js",
+		"css": {
+			"base": false,
+			"custom": "/navbar.css"
+		}
+	},
+	{
 		"url": "elearning.dei.unipd.it/user/policy.php",
 		"js": "/policy.js",
 		"css": {

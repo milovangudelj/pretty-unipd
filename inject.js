@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.08
+// @version      0.3.09
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -28,7 +28,7 @@ function Path() {
 }
 
 (async function () {
-	"use strict";
+	("use strict");
 
 	const path = new Path();
 	let locations = await fetch(`${path.base}/locations.json`).then((res) =>
@@ -48,19 +48,18 @@ function Path() {
 	jQuery.setAttribute("crossorigin", "anonymous");
 	document.head.appendChild(jQuery);
 
+	// Append variables stylesheets
+	const cssVariables = document.createElement("link");
+	cssVariables.setAttribute("rel", "stylesheet");
+	cssVariables.setAttribute("href", path.css + "/variables.css");
+	document.head.appendChild(cssVariables);
+
 	if (page >= 0) {
-		// Append base and variables stylesheets
+		// Append base stylesheets
 		if (locations[page].css.base) {
-			const cssVariables = document.createElement("link");
 			const baseStyles = document.createElement("link");
-
-			cssVariables.setAttribute("rel", "stylesheet");
 			baseStyles.setAttribute("rel", "stylesheet");
-
-			cssVariables.setAttribute("href", path.css + "/variables.css");
 			baseStyles.setAttribute("href", path.css + "/base.css");
-
-			document.head.appendChild(cssVariables);
 			document.head.appendChild(baseStyles);
 		}
 
