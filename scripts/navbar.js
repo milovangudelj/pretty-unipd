@@ -1,5 +1,5 @@
 let navbar = document.querySelector("header");
-// navbar.parentElement.removeChild(navbar);
+
 let myNavbar = fetch("https://upo.milovangudelj.com/fragments/navbar.html")
 	.then((res) => res.text())
 	.then((txt) => {
@@ -28,4 +28,7 @@ let loggedIn = doesHttpOnlyCookieExist(
 	"_shibsession_64656661756c7468747470733a2f2f656c6561726e696e672e6465692e756e6970642e69742f73686962626f6c657468"
 );
 
-console.log("The user is logged in:", loggedIn);
+let profileMenu = document.querySelector("#my-profile-menu");
+if (loggedIn) {
+	profileMenu.style.display = "block";
+}
