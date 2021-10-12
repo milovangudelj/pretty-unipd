@@ -1,16 +1,5 @@
 let navbar = document.querySelector("header");
 
-let myNavbar = fetch("https://upo.milovangudelj.com/fragments/navbar.html")
-	.then((res) => res.text())
-	.then((txt) => {
-		let temp = document.createElement("template");
-		temp.innerHTML = txt.trim();
-
-		navbar.parentElement.replaceChild(temp.content.firstChild, navbar);
-
-		return txt;
-	});
-
 const doesHttpOnlyCookieExist = (cookiename) => {
 	var d = new Date();
 	d.setTime(d.getTime() + 1000);
@@ -24,11 +13,24 @@ const doesHttpOnlyCookieExist = (cookiename) => {
 	}
 };
 
-let loggedIn = doesHttpOnlyCookieExist(
-	"_shibsession_64656661756c7468747470733a2f2f656c6561726e696e672e6465692e756e6970642e69742f73686962626f6c657468"
-);
+let myNavbar = fetch("https://upo.milovangudelj.com/fragments/navbar.html")
+	.then((res) => res.text())
+	.then((txt) => {
+		let temp = document.createElement("template");
+		temp.innerHTML = txt.trim();
 
-let profileMenu = document.querySelector("#my-profile-menu");
-if (loggedIn) {
-	profileMenu.style.display = "block";
-}
+		navbar.parentElement.replaceChild(temp.content.firstChild, navbar);
+
+		checkLogIn();
+	});
+
+const checkLogIn = () => {
+	let loggedIn = doesHttpOnlyCookieExist(
+		"_shibsession_64656661756c7468747470733a2f2f656c6561726e696e672e6465692e756e6970642e69742f73686962626f6c657468"
+	);
+
+	let profileMenu = document.querySelector("#my-profile-menu");
+	if (loggedIn) {
+		profileMenu.style.display = "block";
+	}
+};
