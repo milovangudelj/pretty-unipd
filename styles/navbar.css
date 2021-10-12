@@ -17,6 +17,7 @@ body {
 	display: flex;
 	justify-content: center;
 	background-color: var(--dp01);
+	z-index: 999;
 }
 
 .my-navbar {
@@ -51,6 +52,7 @@ body {
 	position: absolute;
 	top: 100%;
 	left: 0;
+	margin: 0;
 	width: max-content;
 	background-color: var(--dp02);
 	border-radius: 8px;
