@@ -37,10 +37,6 @@ body {
 	position: relative;
 }
 
-.my-nav-link:hover .dropdown-menu {
-	height: auto;
-}
-
 .my-nav-link:hover,
 .my-dropdown-link:hover {
 	transition: all ease 0.2s;
@@ -63,6 +59,10 @@ body {
 	padding: 8px 16px;
 	font-size: 14px;
 	color: var(--he-text);
+}
+
+.my-nav-link:hover .dropdown-menu {
+	height: auto;
 }
 
 .my-nav-link > a,
