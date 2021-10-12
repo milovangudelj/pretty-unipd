@@ -64,7 +64,7 @@ body {
 	color: var(--he-text);
 }
 
-.my-nav-link:hover .dropdown-menu {
+.my-nav-link:hover .my-dropdown-menu {
 	height: auto;
 }
 
