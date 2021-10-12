@@ -92,5 +92,9 @@ body {
 	height: 32px;
 	background-color: var(--dp03);
 	border-radius: 50%;
-	display: none;
+	/* display: none; */
+}
+
+.my-nav-logo {
+	height: 32px;
 }
