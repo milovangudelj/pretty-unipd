@@ -2,9 +2,9 @@ let navbar = document.querySelector("header");
 let myUserName = camelCase(document.querySelector("span.usertext").innerText);
 
 function camelCase(str) {
-	return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
-		index === 0 ? word.toLowerCase() : word.toUpperCase()
-	);
+	return str
+		.toLowerCase()
+		.replace(/(?:^\w|[A-Z]|\b\w)/g, (match) => match.toUpperCase());
 };
 
 const doesHttpOnlyCookieExist = (cookiename) => {
