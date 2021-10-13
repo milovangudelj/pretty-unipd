@@ -1,7 +1,7 @@
 let navbar = document.querySelector("header");
 let myUserName = camelCase(document.querySelector("span.usertext").innerText);
 
-const camelCase = (str) => {
+function camelCase(str) {
 	return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
 		index === 0 ? word.toLowerCase() : word.toUpperCase()
 	);
