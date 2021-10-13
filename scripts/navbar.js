@@ -35,7 +35,7 @@ const checkLogIn = () => {
 		let mySessionKey = menuElements[
 			menuElements.length - 1
 		].parentElement.innerHTML.substr(69, 10);
-		profileMenu.children[1].lastElementChild.setAttribute(
+		profileMenu.children[1].lastElementChild.children[0].setAttribute(
 			"href",
 			`https://elearning.dei.unipd.it/login/logout.php?sesskey=${mySessionKey}`
 		);
