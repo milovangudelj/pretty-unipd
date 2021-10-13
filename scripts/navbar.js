@@ -31,6 +31,16 @@ const checkLogIn = () => {
 
 	let profileMenu = document.querySelector("#my-profile-menu");
 	if (loggedIn) {
+		let mySessionKey = document.body.innerHTML.substr(
+			document.body.innerHTML.indexOf(
+				"https://elearning.dei.unipd.it/login/logout.php"
+			) + 56,
+			10
+		);
+		profileMenu.children[1].lastElementChild.setAttribute(
+			"href",
+			`https://elearning.dei.unipd.it/login/logout.php?sesskey=${mySessionKey}`
+		);
 		profileMenu.style.display = "block";
 	}
 };

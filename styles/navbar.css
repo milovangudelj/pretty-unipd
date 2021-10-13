@@ -32,6 +32,7 @@ body {
 .my-nav-links {
 	list-style: none;
 	display: flex;
+	align-items: center;
 	margin: 0;
 	padding: 8px;
 }
@@ -43,7 +44,8 @@ body {
 }
 
 .my-nav-link:hover,
-.my-dropdown-link:hover {
+.my-dropdown-link:hover,
+.my-profile-menu:hover {
 	transition: all ease 0.2s;
 	color: var(--me-text);
 }
@@ -67,12 +69,14 @@ body {
 	color: var(--he-text);
 }
 
-.my-nav-link:hover .my-dropdown-menu {
+.my-nav-link:hover .my-dropdown-menu,
+.my-profile-menu:hover .my-dropdown-menu {
 	height: auto;
 }
 
 .my-nav-link > a,
-.my-dropdown-link > a {
+.my-dropdown-link > a,
+.my-profile-group > a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -82,19 +86,51 @@ body {
 .my-nav-link > a:visited,
 .my-dropdown-link > a:hover,
 .my-dropdown-link > a:focus,
-.my-dropdown-link > a:visited {
+.my-dropdown-link > a:visited,
+.my-profile-group > a:hover,
+.my-profile-group > a:focus,
+.my-profile-group > a:visited {
 	color: inherit;
 	text-decoration: none;
 }
 
 .my-profile-menu {
+	position: relative;
+	display: none;
+}
+
+.my-profile-group {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+}
+
+span > img {
 	width: 32px;
 	height: 32px;
-	background-color: var(--dp03);
 	border-radius: 50%;
-	/* display: none; */
+	margin-left: 8px;
+}
+
+.my-profile-group > a {
+	margin-right: 8px;
+}
+
+.my-profile-menu > .my-dropdown-menu {
+	left: auto;
+	right: 0;
+}
+
+.my-profile-menu > span {
+	display: block;
+	padding: 8px 0;
+	font-size: 14px;
+	color: var(--he-text);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
 }
 
 .my-nav-logo {
-	height: 32px;
+	height: 48px;
 }
