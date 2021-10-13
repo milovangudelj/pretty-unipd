@@ -96,7 +96,7 @@ body {
 
 .my-profile-menu {
 	position: relative;
-	display: none;
+	/* display: none; */
 }
 
 .my-profile-group {
@@ -105,7 +105,7 @@ body {
 	font-size: 14px;
 }
 
-span > img {
+.my-user > img {
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
@@ -121,7 +121,7 @@ span > img {
 	right: 0;
 }
 
-.my-profile-menu > span {
+.my-profile-menu > .my-user {
 	display: block;
 	padding: 8px 0;
 	font-size: 14px;

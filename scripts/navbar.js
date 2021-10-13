@@ -1,4 +1,11 @@
 let navbar = document.querySelector("header");
+let myUserName = camelCase(document.querySelector("span.usertext").innerText);
+
+const camelCase = (str) => {
+	return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
+		index === 0 ? word.toLowerCase() : word.toUpperCase()
+	);
+};
 
 const doesHttpOnlyCookieExist = (cookiename) => {
 	var d = new Date();
@@ -35,8 +42,9 @@ const checkLogIn = () => {
 		"_shibsession_64656661756c7468747470733a2f2f656c6561726e696e672e6465692e756e6970642e69742f73686962626f6c657468"
 	);
 
-	let profileMenu = document.querySelector("#my-profile-menu");
+	let profileMenu = document.querySelector(".my-profile-menu");
 	if (loggedIn) {
+		document.querySelector(".my-user-name").innerText = myUserName;
 		let menuElements = document.body.querySelectorAll("a.icon.menu-action");
 		let mySessionKey = menuElements[
 			menuElements.length - 1
