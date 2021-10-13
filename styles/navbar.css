@@ -96,7 +96,7 @@ body {
 
 .my-profile-menu {
 	position: relative;
-	/* display: none; */
+	display: none;
 }
 
 .my-profile-group {
