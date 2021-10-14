@@ -1,11 +1,10 @@
 let navbar = document.querySelector("header");
-let myUserName = camelCase(document.querySelector("span.usertext").innerText);
 
 function camelCase(str) {
 	return str
 		.toLowerCase()
 		.replace(/(?:^\w|[A-Z]|\b\w)/g, (match) => match.toUpperCase());
-};
+}
 
 const doesHttpOnlyCookieExist = (cookiename) => {
 	var d = new Date();
@@ -44,6 +43,9 @@ const checkLogIn = () => {
 
 	let profileMenu = document.querySelector(".my-profile-menu");
 	if (loggedIn) {
+		let myUserName = camelCase(
+			document.querySelector("span.usertext").innerText
+		);
 		document.querySelector(".my-user-name").innerText = myUserName;
 		let menuElements = document.body.querySelectorAll("a.icon.menu-action");
 		let mySessionKey = menuElements[
