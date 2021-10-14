@@ -53,6 +53,9 @@ const checkLogIn = () => {
 			"href",
 			`https://elearning.dei.unipd.it/login/logout.php?sesskey=${mySessionKey}`
 		);
-		profileMenu.style.display = "block";
+
+		profileMenu.children[0].style.display = "block";
+		profileMenu.children[1].style.display = "block";
+		profileMenu.children[2].style.display = "flex";
 	}
 };
