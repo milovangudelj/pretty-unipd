@@ -7,13 +7,9 @@
 	font-family: "Inter", sans-serif;
 }
 
-body {
+.my-header {
 	background-color: var(--dp00);
 	color: var(--he-text);
-}
-
-.my-header {
-	background-color: brown;
 	display: flex;
 	justify-content: center;
 	background-color: var(--dp01);
