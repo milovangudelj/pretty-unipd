@@ -56,6 +56,6 @@ const checkLogIn = () => {
 
 		profileMenu.children[0].style.display = "block";
 		profileMenu.children[1].style.display = "block";
-		profileMenu.children[2].style.display = "flex";
+		profileMenu.children[2].style.display = "none";
 	}
 };
