@@ -56,6 +56,17 @@ const checkLogIn = () => {
 			`https://elearning.dei.unipd.it/login/logout.php?sesskey=${mySessionKey}`
 		);
 
+		let myUserId = document.body.innerHTML.substr(
+			document.body.innerHTML.indexOf(
+				"https://elearning.dei.unipd.it/user/profile.php?id="
+			) + 51,
+			5
+		);
+		profileMenu.children[1].children[1].children[0].setAttribute(
+			"href",
+			`https://elearning.dei.unipd.it/user/profile.php?id=${myUserId}`
+		);
+
 		profileMenu.children[0].style.display = "block";
 		profileMenu.children[1].style.display = "block";
 		profileMenu.children[2].style.display = "none";
