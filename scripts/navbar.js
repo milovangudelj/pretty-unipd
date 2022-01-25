@@ -30,8 +30,11 @@ let myNavbar = fetch("https://upo.milovangudelj.com/fragments/navbar.html")
 		// Check login
 		checkLogIn();
 
+		// Remove old header
 		let oldHeader = document.querySelector("div#top-header");
 		oldHeader.parentElement.removeChild(oldHeader);
+
+		// Remove dock
 		document.body.removeChild(document.querySelector("div#dock"));
 		document.querySelector("div#page").style.paddingLeft = "0";
 	});

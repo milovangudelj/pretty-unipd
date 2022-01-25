@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pretty Unipd
 // @namespace    http://tampermonkey.net/
-// @version      0.3.09
+// @version      0.3.10
 // @description  It changes the styling of a few pages on University of Padua's website
 // @author       Milovan Gudelj
 // @match        https://*.unipd.it/*
@@ -27,9 +27,7 @@ function Path() {
 	this.html = `${this.base}/fragments`;
 }
 
-(async function () {
-	("use strict");
-
+const inject = async () => {
 	const path = new Path();
 	let locations = await fetch(`${path.base}/locations.json`).then((res) =>
 		res.json()
@@ -78,4 +76,6 @@ function Path() {
 			document.head.appendChild(myScript);
 		}
 	}
-})();
+};
+
+inject();
