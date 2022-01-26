@@ -10,6 +10,10 @@ A graphic enhancement for the login page of the Department of Information Engine
 4. Then go to `Utilities` and paste this link (<https://upo.milovangudelj.com/inject.js>) in the `Install from URL` field
 5. Then click on `Install`, and voilà. The next time you visit the login page you will be greeted with a different, fancier UI.
 
+# Extension
+
+A Chrome browser extension will be available soon. It will eliminate the need for installing Tampermonkey. 
+
 # But...
 
 1. This only works for the email and password method, I have not yet hooked up the 'Login with SPID' button.
